@@ -7,15 +7,21 @@
     using Common.Models;
 
     using Microsoft.AspNet.Identity.EntityFramework;
-
+    using MvcTemplate.Data.Models;
     using Organizr.Data.Models;
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public IDbSet<Event> Events { get; set; }
+
+        public IDbSet<Location> Locations { get; set; }
+
+        public IDbSet<LocationRate> LocationRates { get; set; }
 
         public static ApplicationDbContext Create()
         {
