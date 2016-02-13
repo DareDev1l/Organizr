@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Data.Models
+﻿namespace Organizr.Data.Models
 {
     using Organizr.Data.Common.Models;
     using Organizr.Data.Models;
@@ -10,11 +10,11 @@
 
         public virtual Location Location { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public virtual User User { get; set; }
 
         [Range(1,10)]
-        public double Value { get; set; }
+        public int Value { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Data.Models
+﻿namespace Organizr.Data.Models
 {
     using System;
     using System.Collections.Generic;
@@ -26,7 +26,7 @@
         [MinLength(10)]
         public string Description { get; set; }
 
-        public int OrganiserId { get; set; }
+        public string OrganiserId { get; set; }
 
         public virtual User Organiser { get; set; }
 

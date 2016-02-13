@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Data.Models
+﻿namespace Organizr.Data.Models
 {
     using Organizr.Data.Common.Models;
     using Organizr.Data.Models;

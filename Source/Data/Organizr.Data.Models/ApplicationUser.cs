@@ -8,7 +8,7 @@
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using MvcTemplate.Data.Models;
+    using Organizr.Data.Models;
 
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class User : IdentityUser
@@ -23,13 +23,11 @@
             this.eventsParticipated = new HashSet<Event>();
             this.locationsOwned = new HashSet<Location>();
         }
-
-        [Required]
+        
         [MinLength(1)]
         [MaxLength(50)]
         public string FirstName { get; set; }
-
-        [Required]
+        
         [MinLength(1)]
         [MaxLength(50)]
         public string LastName { get; set; }

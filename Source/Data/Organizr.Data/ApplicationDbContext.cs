@@ -7,7 +7,7 @@
     using Common.Models;
 
     using Microsoft.AspNet.Identity.EntityFramework;
-    using MvcTemplate.Data.Models;
+    using Organizr.Data.Models;
     using Organizr.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext<User>

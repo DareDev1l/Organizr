@@ -7,8 +7,8 @@
     <ProjectGuid>{7C950CDC-9587-4B65-A204-988EFED17948}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvcTemplate.Data</RootNamespace>
-    <AssemblyName>MvcTemplate.Data</AssemblyName>
+    <RootNamespace>Organizr.Data</RootNamespace>
+    <AssemblyName>Organizr.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -72,6 +72,14 @@
     <Compile Include="Migrations\201602130250003_Added LocationsOwned to User.Designer.cs">
       <DependentUpon>201602130250003_Added LocationsOwned to User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602131559254_FixedUserIds.cs" />
+    <Compile Include="Migrations\201602131559254_FixedUserIds.Designer.cs">
+      <DependentUpon>201602131559254_FixedUserIds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602131702366_RemoveRequiredForUserName.cs" />
+    <Compile Include="Migrations\201602131702366_RemoveRequiredForUserName.Designer.cs">
+      <DependentUpon>201602131702366_RemoveRequiredForUserName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602130250003_Added LocationsOwned to User.resx">
       <DependentUpon>201602130250003_Added LocationsOwned to User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602131559254_FixedUserIds.resx">
+      <DependentUpon>201602131559254_FixedUserIds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602131702366_RemoveRequiredForUserName.resx">
+      <DependentUpon>201602131702366_RemoveRequiredForUserName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
