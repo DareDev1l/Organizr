@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web.Infrastructure.Mapping
+﻿namespace Organizr.Web.Infrastructure.Mapping
 {
     public interface IMapTo<T>
         where T : class

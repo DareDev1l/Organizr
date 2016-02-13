@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web.Areas.Administration
+﻿namespace Organizr.Web.Areas.Administration
 {
     using System.Web.Mvc;
 

@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Data.Models
+﻿namespace Organizr.Data.Models
 {
     using System.Security.Claims;
     using System.Threading.Tasks;

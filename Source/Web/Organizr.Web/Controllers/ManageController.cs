@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web.Controllers
+﻿namespace Organizr.Web.Controllers
 {
     using System.Linq;
     using System.Threading.Tasks;
@@ -9,7 +9,7 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
-    using MvcTemplate.Web.ViewModels.Manage;
+    using Organizr.Web.ViewModels.Manage;
 
     [Authorize]
     public class ManageController : BaseController

@@ -2,9 +2,9 @@
 
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(MvcTemplate.Web.Startup))]
+[assembly: OwinStartupAttribute(typeof(Organizr.Web.Startup))]
 
-namespace MvcTemplate.Web
+namespace Organizr.Web
 {
     public partial class Startup
     {

@@ -1,9 +1,9 @@
-﻿namespace MvcTemplate.Web.Controllers
+﻿namespace Organizr.Web.Controllers
 {
     using System.Web.Mvc;
     using AutoMapper;
     using Infrastructure.Mapping;
-    using MvcTemplate.Services.Web;
+    using Organizr.Services.Web;
 
     public abstract class BaseController : Controller
     {

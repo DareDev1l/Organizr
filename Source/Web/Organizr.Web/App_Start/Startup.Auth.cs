@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web
+﻿namespace Organizr.Web
 {
     using System;
 
@@ -7,8 +7,8 @@
     using Microsoft.Owin;
     using Microsoft.Owin.Security.Cookies;
 
-    using MvcTemplate.Data;
-    using MvcTemplate.Data.Models;
+    using Organizr.Data;
+    using Organizr.Data.Models;
 
     using Owin;
 

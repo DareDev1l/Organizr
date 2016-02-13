@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Data.Migrations
+﻿namespace Organizr.Data.Migrations
 {
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -6,8 +6,8 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    using MvcTemplate.Common;
-    using MvcTemplate.Data.Models;
+    using Organizr.Common;
+    using Organizr.Data.Models;
 
     public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {

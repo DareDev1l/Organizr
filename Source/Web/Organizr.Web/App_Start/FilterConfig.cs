@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web
+﻿namespace Organizr.Web
 {
     using System.Web.Mvc;
 

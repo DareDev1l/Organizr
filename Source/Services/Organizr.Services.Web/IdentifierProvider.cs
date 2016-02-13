@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Services.Web
+﻿namespace Organizr.Services.Web
 {
     using System;
     using System.Text;

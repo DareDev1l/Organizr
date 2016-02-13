@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Services.Web
+﻿namespace Organizr.Services.Web
 {
     public interface IIdentifierProvider
     {

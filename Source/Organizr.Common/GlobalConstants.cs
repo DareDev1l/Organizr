@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Common
+﻿namespace Organizr.Common
 {
     public class GlobalConstants
     {

@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web.Infrastructure.Mapping
+﻿namespace Organizr.Web.Infrastructure.Mapping
 {
     using System;
     using System.Linq;

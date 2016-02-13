@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web.ViewModels.Manage
+﻿namespace Organizr.Web.ViewModels.Manage
 {
     public class FactorViewModel
     {

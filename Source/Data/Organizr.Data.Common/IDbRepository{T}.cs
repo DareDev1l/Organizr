@@ -1,8 +1,8 @@
-﻿namespace MvcTemplate.Data.Common
+﻿namespace Organizr.Data.Common
 {
     using System.Linq;
 
-    using MvcTemplate.Data.Common.Models;
+    using Organizr.Data.Common.Models;
 
     public interface IDbRepository<T> : IDbRepository<T, int>
         where T : BaseModel<int>

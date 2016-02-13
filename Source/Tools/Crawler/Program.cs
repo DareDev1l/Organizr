@@ -2,10 +2,9 @@
 {
     using System;
     using AngleSharp;
-    using MvcTemplate.Data;
-    using MvcTemplate.Data.Common;
-    using MvcTemplate.Data.Models;
-    using MvcTemplate.Services.Data;
+    using Organizr.Data;
+    using Organizr.Data.Common;
+    using Organizr.Data.Models;
 
     public static class Program
     {

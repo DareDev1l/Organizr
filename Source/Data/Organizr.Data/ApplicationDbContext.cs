@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Data
+﻿namespace Organizr.Data
 {
     using System;
     using System.Data.Entity;
@@ -8,7 +8,7 @@
 
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    using MvcTemplate.Data.Models;
+    using Organizr.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

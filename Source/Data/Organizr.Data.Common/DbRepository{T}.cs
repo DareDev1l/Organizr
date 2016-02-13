@@ -1,10 +1,10 @@
-﻿namespace MvcTemplate.Data.Common
+﻿namespace Organizr.Data.Common
 {
     using System;
     using System.Data.Entity;
     using System.Linq;
 
-    using MvcTemplate.Data.Common.Models;
+    using Organizr.Data.Common.Models;
 
     // TODO: Why BaseModel<int> instead BaseModel<TKey>?
     public class DbRepository<T> : IDbRepository<T>

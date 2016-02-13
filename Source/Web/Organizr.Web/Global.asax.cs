@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web
+﻿namespace Organizr.Web
 {
     using System.Data.Entity;
     using System.Reflection;

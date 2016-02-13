@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Data.Common.Models
+﻿namespace Organizr.Data.Common.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;

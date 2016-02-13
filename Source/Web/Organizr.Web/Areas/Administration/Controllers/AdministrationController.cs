@@ -1,9 +1,9 @@
-﻿namespace MvcTemplate.Web.Areas.Administration.Controllers
+﻿namespace Organizr.Web.Areas.Administration.Controllers
 {
     using System.Web.Mvc;
 
-    using MvcTemplate.Common;
-    using MvcTemplate.Web.Controllers;
+    using Organizr.Common;
+    using Organizr.Web.Controllers;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class AdministrationController : BaseController

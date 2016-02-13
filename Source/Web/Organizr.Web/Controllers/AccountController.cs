@@ -1,4 +1,4 @@
-﻿namespace MvcTemplate.Web.Controllers
+﻿namespace Organizr.Web.Controllers
 {
     using System.Linq;
     using System.Threading.Tasks;
@@ -9,8 +9,8 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
-    using MvcTemplate.Data.Models;
-    using MvcTemplate.Web.ViewModels.Account;
+    using Organizr.Data.Models;
+    using Organizr.Web.ViewModels.Account;
 
     [Authorize]
     public class AccountController : BaseController
