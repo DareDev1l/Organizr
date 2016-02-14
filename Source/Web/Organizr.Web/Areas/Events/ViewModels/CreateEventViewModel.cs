@@ -1,16 +1,13 @@
 ﻿namespace Organizr.Web.Areas.Events.ViewModels
 {
+    using Infrastructure.Mapping;
+    using Data.Models;
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    using Organizr.Data.Models;
-    using Organizr.Data.Models;
-
     // TODO: Add location
-    public class CreateEventViewModel
+    public class CreateEventViewModel : IMapFrom<Event>
     {
-        public int Id { get; set; }
-
         [Required]
         [MinLength(1)]
         public string Name { get; set; }

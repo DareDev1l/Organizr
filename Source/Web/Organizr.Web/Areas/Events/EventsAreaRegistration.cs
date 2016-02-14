@@ -16,7 +16,7 @@ namespace Organizr.Web.Areas.Events
         {
             context.MapRoute(
                 "Events_default",
-                "Events/{controller}/{action}/{id}",
+                "{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

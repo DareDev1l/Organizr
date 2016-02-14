@@ -54,5 +54,7 @@
                 }
             }
         }
+
+        //public System.Data.Entity.DbSet<Organizr.Web.Areas.Events.ViewModels.CreateEventViewModel> CreateEventViewModels { get; set; }
     }
 }

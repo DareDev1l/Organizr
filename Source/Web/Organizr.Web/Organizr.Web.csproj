@@ -199,7 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
-    <Compile Include="Areas\Events\Controllers\CreateEventController.cs" />
+    <Compile Include="Areas\Events\Controllers\EventsController.cs" />
     <Compile Include="Areas\Events\EventsAreaRegistration.cs" />
     <Compile Include="Areas\Events\ViewModels\CreateEventViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -254,6 +254,7 @@
     <Content Include="Areas\Events\Views\web.config" />
     <Content Include="Areas\Events\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Events\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Events\Views\CreateEvent\CreateEvent.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -306,7 +307,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="Areas\Events\Views\CreateEvent\" />
     <Folder Include="ViewModels\Home\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
