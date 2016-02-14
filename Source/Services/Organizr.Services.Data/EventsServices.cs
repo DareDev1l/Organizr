@@ -1,9 +1,10 @@
-﻿using System;
-using Organizr.Data.Models;
-using Organizr.Data.Common;
-
-namespace MvcTemplate.Services.Data
+﻿namespace MvcTemplate.Services.Data
 {
+    using System;
+    using System.Linq;
+    using Organizr.Data.Common;
+    using Organizr.Data.Models;
+
     public class EventsServices : IEventsServices
     {
         private IDbRepository<Event> events;
@@ -19,6 +20,11 @@ namespace MvcTemplate.Services.Data
             this.events.Save();
 
             return eventToRegister;
+        }
+
+        public IQueryable<Event> GetAll()
+        {
+            return this.events.All();
         }
     }
 }

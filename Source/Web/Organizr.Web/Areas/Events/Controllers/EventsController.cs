@@ -1,6 +1,7 @@
 ﻿using MvcTemplate.Services.Data;
 using Organizr.Data.Models;
 using Organizr.Web.Areas.Events.ViewModels;
+using Organizr.Web.Infrastructure.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,9 +46,11 @@ namespace Organizr.Web.Areas.Events.Controllers
             return this.RedirectToAction("Index", "Home");
         }
 
-        public ActionResult Details(string id)
+        public ActionResult List()
         {
-            return 
+            var events = this.eventsServices.GetAll().To<ListEventsViewModel>().ToList();
+
+            return this.View(events);
         }
     }
 }
