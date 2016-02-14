@@ -1,4 +1,5 @@
-﻿using MvcTemplate.Services.Data;
+﻿using Microsoft.AspNet.Identity;
+using MvcTemplate.Services.Data;
 using Organizr.Data.Models;
 using Organizr.Web.Areas.Events.ViewModels;
 using Organizr.Web.Infrastructure.Mapping;
@@ -10,22 +11,24 @@ using System.Web.Mvc;
 
 namespace Organizr.Web.Areas.Events.Controllers
 {
-    public class EventsController : Controller
+    public class CreateController : Controller
     {
         private IEventsServices eventsServices;
 
-        public EventsController(IEventsServices eventsServices)
+        public CreateController(IEventsServices eventsServices)
         {
             this.eventsServices = eventsServices;
         }
 
-        // GET: Events/CreateEvent
-        public ActionResult Create()
+        // GET: Events/Create
+        public ActionResult Index()
         {
             return this.View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(CreateEventViewModel eventToRegister)
         {
             if(!this.ModelState.IsValid)
@@ -33,24 +36,20 @@ namespace Organizr.Web.Areas.Events.Controllers
                 return this.View(eventToRegister);
             }
 
+            var userId = this.User.Identity.GetUserId();
+
             var eventToCreate = new Event()
             {
                 Name = eventToRegister.Name,
                 Description = eventToRegister.Description,
                 StartDate = DateTime.Now,
-                LocationId = 3
+                LocationId = 3,
+                OrganiserId = userId
             };
 
             this.eventsServices.CreateEvent(eventToCreate);
 
-            return this.RedirectToAction("Index", "Home");
-        }
-
-        public ActionResult List()
-        {
-            var events = this.eventsServices.GetAll().To<ListEventsViewModel>().ToList();
-
-            return this.View(events);
+            return this.RedirectToAction("List", "List");
         }
     }
 }
