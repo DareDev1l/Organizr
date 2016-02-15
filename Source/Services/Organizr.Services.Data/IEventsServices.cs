@@ -8,5 +8,7 @@
         Event CreateEvent(Event eventToRegister);
 
         IQueryable<Event> GetAll();
+
+        Event GetById(string urlId);
     }
 }

@@ -4,14 +4,17 @@
     using System.Linq;
     using Organizr.Data.Common;
     using Organizr.Data.Models;
+    using Organizr.Services.Web;
 
     public class EventsServices : IEventsServices
     {
-        private IDbRepository<Event> events;
+        private readonly IDbRepository<Event> events;
+        private readonly IIdentifierProvider identifierProvider;
 
-        public EventsServices(IDbRepository<Event> eventsRepository)
+        public EventsServices(IDbRepository<Event> eventsRepository, IIdentifierProvider identifierProvider)
         {
             this.events = eventsRepository;
+            this.identifierProvider = identifierProvider;
         }
 
         public Event CreateEvent(Event eventToRegister)
@@ -25,6 +28,14 @@
         public IQueryable<Event> GetAll()
         {
             return this.events.All();
+        }
+
+        public Event GetById(string urlId)
+        {
+            var intId = this.identifierProvider.DecodeId(urlId);
+            var eventById = this.events.GetById(intId);
+
+            return eventById;
         }
     }
 }

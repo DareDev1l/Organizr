@@ -1,0 +1,63 @@
+﻿@model Organizr.Web.Areas.Events.ViewModels.EventDetailsViewModel
+
+<div class="row custom-additional-info">
+    <div class="col-md-5">
+        <div class="row custom-heading">
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-th"></span>
+                Details
+            </div>
+        </div>
+
+        <div class="row custom-description">
+            <div class="col-md-12 custom-description">
+                
+                <h3>
+                    <span class="glyphicon glyphicon-time"></span>
+                    Start: @Model.StartDate
+                </h3>
+                @{
+                    if (Model.HasFinished)
+                    {
+                        <h3>
+                            Event has ended!
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </h3>
+                        
+                    }
+                    else
+                    {
+                        <h3>
+                            Event is active
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </h3>
+                        
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-5">
+        <div class="row custom-heading">
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-user"></span>
+                Participants
+            </div>
+        </div>
+
+        <div class="row custom-description">
+            <div class="col-md-12 custom-description">
+                <ul>
+                    @foreach(var participant in Model.Participants)
+                    {
+                        <li>@participant.Email</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</div>

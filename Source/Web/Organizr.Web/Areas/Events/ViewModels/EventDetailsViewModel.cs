@@ -5,12 +5,9 @@
 
     using Infrastructure.Mapping;
     using Organizr.Data.Models;
-    using Services.Web;
 
-    public class ListEventsViewModel : IMapFrom<Event>
+    public class EventDetailsViewModel : IMapFrom<Event>
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public string Description { get; set; }
@@ -23,13 +20,8 @@
 
         public bool HasFinished { get; set; }
 
-        public string Url
-        {
-            get
-            {
-                IIdentifierProvider identifier = new IdentifierProvider();
-                return $"/Events/Details/ById/{identifier.EncodeId(this.Id)}";
-            }
-        }
+        public ICollection<User> Candidates { get; set; }
+
+        public ICollection<User> Participants { get; set; }
     }
 }

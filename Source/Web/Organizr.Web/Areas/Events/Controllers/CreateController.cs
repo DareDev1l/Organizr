@@ -42,8 +42,9 @@ namespace Organizr.Web.Areas.Events.Controllers
             {
                 Name = eventToRegister.Name,
                 Description = eventToRegister.Description,
-                StartDate = DateTime.Now,
+                CreatedOn = DateTime.Now,
                 LocationId = 3,
+                StartDate = eventToRegister.StartDate,
                 OrganiserId = userId
             };
 

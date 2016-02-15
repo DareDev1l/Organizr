@@ -200,9 +200,11 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Events\Controllers\CreateController.cs" />
+    <Compile Include="Areas\Events\Controllers\DetailsController.cs" />
     <Compile Include="Areas\Events\Controllers\ListController.cs" />
     <Compile Include="Areas\Events\EventsAreaRegistration.cs" />
     <Compile Include="Areas\Events\ViewModels\CreateEventViewModel.cs" />
+    <Compile Include="Areas\Events\ViewModels\EventDetailsViewModel.cs" />
     <Compile Include="Areas\Events\ViewModels\ListEventsViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -258,6 +260,9 @@
     <Content Include="Areas\Events\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Events\Views\Create\Index.cshtml" />
     <Content Include="Areas\Events\Views\List\Index.cshtml" />
+    <Content Include="Areas\Events\Views\Details\ById.cshtml" />
+    <Content Include="Areas\Events\Views\Shared\_BasicEventInformation.cshtml" />
+    <Content Include="Areas\Events\Views\Shared\_AdditionalEventInformation.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -310,6 +315,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Events\Views\Shared\DisplayTemplates\" />
     <Folder Include="ViewModels\Home\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
