@@ -20,16 +20,17 @@
                     if (Model.HasFinished)
                     {
                         <h3>
-                            Event has ended
                             <span class="glyphicon glyphicon-remove"></span>
+                            Event has ended
                         </h3>
                         
                     }
                     else
                     {
                         <h3>
-                            Event is active
                             <span class="glyphicon glyphicon-ok"></span>
+                            Event is active 
+                            @Html.ActionLink("Join", "Join", "Details", new { area = "Events", id = Model.EncodedId }, new { @class = "btn btn-success" })
                         </h3>
                         
                     }

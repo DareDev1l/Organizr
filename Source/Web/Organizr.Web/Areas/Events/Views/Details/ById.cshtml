@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Index";
 }
-@Html.ActionLink("Join", "Join", "Details", new { area = "Events", id = Model.EncodedId}, new { @class = "navbar-brand" })
 
 @Html.Partial("_BasicEventInformation", Model)
 @Html.Partial("_AdditionalEventInformation", Model)
