@@ -6,8 +6,9 @@
     using Infrastructure.Mapping;
     using MvcTemplate.Services.Data;
     using ViewModels;
+    using Web.Controllers;
 
-    public class ListController : Controller
+    public class ListController : BaseController
     {
         private IEventsServices eventsServices;
 

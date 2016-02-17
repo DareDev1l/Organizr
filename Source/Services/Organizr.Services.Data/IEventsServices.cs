@@ -10,5 +10,7 @@
         IQueryable<Event> GetAll();
 
         Event GetById(string urlId);
+
+        Event AddUserToEvent(string eventId, User user);
     }
 }

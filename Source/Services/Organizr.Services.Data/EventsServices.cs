@@ -37,5 +37,14 @@
 
             return eventById;
         }
+
+        public Event AddUserToEvent(string eventId, User user)
+        {
+            var eventToFind = this.GetById(eventId);
+            eventToFind.Participants.Add(user);
+            this.events.Save();
+
+            return eventToFind;
+        }
     }
 }
