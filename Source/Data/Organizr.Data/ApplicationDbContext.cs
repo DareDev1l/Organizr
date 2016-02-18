@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Organizr.Data.Models;
     using Organizr.Data.Models;
+    using System.Data.Entity.ModelConfiguration.Conventions;
 
     public class ApplicationDbContext : IdentityDbContext<User>
     {
@@ -55,6 +56,11 @@
             }
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
         //public System.Data.Entity.DbSet<Organizr.Web.Areas.Events.ViewModels.CreateEventViewModel> CreateEventViewModels { get; set; }
     }
 }

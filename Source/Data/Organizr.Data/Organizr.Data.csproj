@@ -80,6 +80,14 @@
     <Compile Include="Migrations\201602131702366_RemoveRequiredForUserName.Designer.cs">
       <DependentUpon>201602131702366_RemoveRequiredForUserName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602172327174_AddedLocationForEvents.cs" />
+    <Compile Include="Migrations\201602172327174_AddedLocationForEvents.Designer.cs">
+      <DependentUpon>201602172327174_AddedLocationForEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602172357376_FixDatabase.cs" />
+    <Compile Include="Migrations\201602172357376_FixDatabase.Designer.cs">
+      <DependentUpon>201602172357376_FixDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -126,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602131702366_RemoveRequiredForUserName.resx">
       <DependentUpon>201602131702366_RemoveRequiredForUserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602172327174_AddedLocationForEvents.resx">
+      <DependentUpon>201602172327174_AddedLocationForEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602172357376_FixDatabase.resx">
+      <DependentUpon>201602172357376_FixDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

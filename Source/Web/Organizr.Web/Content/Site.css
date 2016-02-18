@@ -63,3 +63,7 @@ textarea {
 #map {
     height: 500px !important;
 }
+
+.hiddenInput {
+    display: none;
+}

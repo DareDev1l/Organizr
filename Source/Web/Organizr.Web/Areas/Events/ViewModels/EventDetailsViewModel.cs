@@ -21,6 +21,8 @@
 
         public Location Location { get; set; }
 
+        public LocationOnMap LocationOnMap { get; set; }
+
         public bool HasFinished { get; set; }
 
         public ICollection<User> Candidates { get; set; }

@@ -43,7 +43,7 @@ namespace Organizr.Web.Areas.Events.Controllers
                 Name = eventToRegister.Name,
                 Description = eventToRegister.Description,
                 CreatedOn = DateTime.Now,
-                LocationId = 3,
+                LocationId = 2,
                 StartDate = eventToRegister.StartDate,
                 OrganiserId = userId
             };
