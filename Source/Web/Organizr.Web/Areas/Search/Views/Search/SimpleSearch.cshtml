@@ -1,0 +1,12 @@
+﻿@model Organizr.Web.Areas.Search.ViewModels.PageableUsersViewModel
+@{
+    ViewBag.Title = "SimpleSearch";
+}
+
+<h2>Users:</h2>
+
+@Html.DisplayFor(m => m.Users)
+@foreach (var user in Model.Users)
+{
+    
+}

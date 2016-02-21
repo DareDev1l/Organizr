@@ -44,17 +44,17 @@
             <span class="glyphicon glyphicon-globe open"></span>
         </button>
         <div class="form-group">
-            @Html.LabelFor(model => model.LocationOnMap.Longitude, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Coordinates.Longitude, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LocationOnMap.Longitude, new { htmlAttributes = new { @class = "hiddenInput" ,id = "longitude" } })
-                @Html.ValidationMessageFor(model => model.LocationOnMap.Longitude, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Coordinates.Longitude, new { htmlAttributes = new { @class = "hiddenInput" ,id = "longitude" } })
+                @Html.ValidationMessageFor(model => model.Coordinates.Longitude, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.LocationOnMap.Latitude, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Coordinates.Latitude, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LocationOnMap.Latitude, new { htmlAttributes = new { @class = "hiddenInput", id = "latitude" } })
-                @Html.ValidationMessageFor(model => model.LocationOnMap.Latitude, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Coordinates.Latitude, new { htmlAttributes = new { @class = "hiddenInput", id = "latitude" } })
+                @Html.ValidationMessageFor(model => model.Coordinates.Latitude, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">

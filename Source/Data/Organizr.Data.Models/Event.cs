@@ -36,6 +36,10 @@
 
         public virtual Location Location { get; set; }
 
+        public int CoordinatesId { get; set; }
+
+        public virtual Coordinates Coordinates { get; set; }
+
         public bool HasFinished { get; set; }
 
         public virtual ICollection<User> Candidates

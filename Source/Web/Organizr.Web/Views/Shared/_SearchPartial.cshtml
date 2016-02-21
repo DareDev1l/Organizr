@@ -1,0 +1,6 @@
+﻿@model Organizr.Web.Areas.Search.ViewModels.SearchViewModel
+
+@using (@Html.BeginForm("SimpleSearch", "Search", FormMethod.Post, new { area = "Search", @class = "searchBox", style = "display:inline !important;" }))
+{
+    @Html.EditorForModel()
+}

@@ -43,9 +43,10 @@ namespace Organizr.Web.Areas.Events.Controllers
                 Name = eventToRegister.Name,
                 Description = eventToRegister.Description,
                 CreatedOn = DateTime.Now,
-                LocationId = 2,
                 StartDate = eventToRegister.StartDate,
-                OrganiserId = userId
+                OrganiserId = userId,
+                Coordinates = eventToRegister.Coordinates,
+                LocationId = 1
             };
 
             this.eventsServices.CreateEvent(eventToCreate);

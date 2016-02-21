@@ -18,6 +18,6 @@
 
         public DateTime? StartDate { get; set; }
 
-        public LocationOnMap LocationOnMap { get; set; }
+        public Coordinates Coordinates { get; set; }
     }
 }

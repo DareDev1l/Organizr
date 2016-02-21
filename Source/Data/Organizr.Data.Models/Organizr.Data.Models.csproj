@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coordinates.cs" />
+    <Compile Include="FriendRequest.cs" />
     <Compile Include="LocationOnMap.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Event.cs" />

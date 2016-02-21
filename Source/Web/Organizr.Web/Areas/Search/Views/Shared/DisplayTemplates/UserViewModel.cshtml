@@ -1,0 +1,11 @@
+﻿@model Organizr.Web.Areas.Search.ViewModels.UserViewModel
+
+<div class="row search-user">
+    <div class="col-md-6">
+        <h2>@Model.Email</h2>
+    </div>
+    <div class="col-md-2">
+        @Html.ActionLink("See", "Details", "Users")
+    </div>
+</div>
+

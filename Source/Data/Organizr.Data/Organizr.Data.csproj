@@ -88,6 +88,14 @@
     <Compile Include="Migrations\201602172357376_FixDatabase.Designer.cs">
       <DependentUpon>201602172357376_FixDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602180019153_AddedCoordinates.cs" />
+    <Compile Include="Migrations\201602180019153_AddedCoordinates.Designer.cs">
+      <DependentUpon>201602180019153_AddedCoordinates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602202153531_AddedFriendshipRequets.cs" />
+    <Compile Include="Migrations\201602202153531_AddedFriendshipRequets.Designer.cs">
+      <DependentUpon>201602202153531_AddedFriendshipRequets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -140,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602172357376_FixDatabase.resx">
       <DependentUpon>201602172357376_FixDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602180019153_AddedCoordinates.resx">
+      <DependentUpon>201602180019153_AddedCoordinates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602202153531_AddedFriendshipRequets.resx">
+      <DependentUpon>201602202153531_AddedFriendshipRequets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

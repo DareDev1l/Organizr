@@ -1,11 +1,10 @@
 ﻿namespace MvcTemplate.Services.Data
 {
-    using System;
-    using Organizr.Data.Models;
+    using System.Data.Entity;
+    using System.Linq;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using Organizr.Data;
-    using System.Data.Entity;
+    using Organizr.Data.Models;
 
     public class UsersService : IUsersServices
     {
@@ -21,6 +20,14 @@
             var userManager = new UserManager<User>(new UserStore<User>(this.Context));
             var user = userManager.FindById(id);
             return user;
+        }
+
+        public IQueryable<User> GetAll()
+        {
+            var userManager = new UserManager<User>(new UserStore<User>(this.Context));
+            var users = userManager.Users;
+
+            return users;
         }
     }
 }

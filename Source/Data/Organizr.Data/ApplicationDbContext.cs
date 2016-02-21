@@ -24,6 +24,10 @@
 
         public IDbSet<LocationRate> LocationRates { get; set; }
 
+        public IDbSet<Coordinates> Coordinates { get; set; }
+
+        public IDbSet<FriendRequest> FriendRequests { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

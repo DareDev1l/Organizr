@@ -67,3 +67,7 @@ textarea {
 .hiddenInput {
     display: none;
 }
+
+.searchBox {
+    margin-top: 20px;
+}

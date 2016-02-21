@@ -16,23 +16,53 @@
         private ICollection<Event> eventsOrganised;
         private ICollection<Event> eventsParticipated;
         private ICollection<Location> locationsOwned;
+        private ICollection<User> friends;
+        private ICollection<FriendRequest> friendRequests;
 
         public User()
         {
             this.eventsOrganised = new HashSet<Event>();
             this.eventsParticipated = new HashSet<Event>();
             this.locationsOwned = new HashSet<Location>();
+            this.friends = new HashSet<User>();
+            this.friendRequests = new HashSet<FriendRequest>();
         }
-        
+
         [MinLength(1)]
         [MaxLength(50)]
         public string FirstName { get; set; }
-        
+
         [MinLength(1)]
         [MaxLength(50)]
         public string LastName { get; set; }
 
         public DateTime? BirthDay { get; set; }
+
+        public ICollection<User> Friends
+        {
+            get
+            {
+                return this.friends;
+            }
+
+            set
+            {
+                this.friends = value;
+            }
+        }
+
+        public ICollection<FriendRequest> FriendRequests
+        {
+            get
+            {
+                return this.friendRequests;
+            }
+
+            set
+            {
+                this.friendRequests = value;
+            }
+        }
 
         public ICollection<Event> EventsOrganised
         {
