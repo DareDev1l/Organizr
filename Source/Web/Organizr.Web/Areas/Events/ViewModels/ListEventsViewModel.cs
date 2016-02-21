@@ -28,7 +28,7 @@
             get
             {
                 IIdentifierProvider identifier = new IdentifierProvider();
-                return $"/Events/Details/ById/{identifier.EncodeId(this.Id)}";
+                return $"/Details/ById/{identifier.EncodeId(this.Id)}";
             }
         }
     }

@@ -266,8 +266,8 @@
     <Content Include="Areas\Events\Views\web.config" />
     <Content Include="Areas\Events\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Events\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Events\Views\Create\Index.cshtml" />
-    <Content Include="Areas\Events\Views\List\Index.cshtml" />
+    <Content Include="Areas\Events\Views\Create\Event.cshtml" />
+    <Content Include="Areas\Events\Views\List\All.cshtml" />
     <Content Include="Areas\Events\Views\Details\ById.cshtml" />
     <Content Include="Areas\Events\Views\Shared\_BasicEventInformation.cshtml" />
     <Content Include="Areas\Events\Views\Shared\_AdditionalEventInformation.cshtml" />

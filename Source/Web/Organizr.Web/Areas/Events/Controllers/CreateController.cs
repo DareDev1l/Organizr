@@ -21,7 +21,7 @@ namespace Organizr.Web.Areas.Events.Controllers
         }
 
         // GET: Events/Create
-        public ActionResult Index()
+        public ActionResult Event()
         {
             return this.View();
         }

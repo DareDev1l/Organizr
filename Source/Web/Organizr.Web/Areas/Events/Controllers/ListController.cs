@@ -18,7 +18,7 @@
         }
 
         // GET: Events/List
-        public ActionResult Index()
+        public ActionResult All()
         {
             var events = this.eventsServices.GetAll().To<ListEventsViewModel>().ToList();
 
