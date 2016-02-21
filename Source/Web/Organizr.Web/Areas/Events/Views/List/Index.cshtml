@@ -4,49 +4,9 @@
     ViewBag.Title = "ListEvents";
 }
 
-<h2>ListEvents</h2>
+<h2>Events</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Organiser.Email)
-        </th>
-        <th>Link</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Organiser.Email)
-            </td>
-            <td>
-                <div class="col-md-4">
-                    <a href="@item.Url">Details</a>
-                </div>
-            </td>
-        </tr>
-    }
-
-</table>
+@foreach (var item in Model)
+{
+    @Html.DisplayForModel(item)
+}

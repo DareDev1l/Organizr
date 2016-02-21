@@ -275,6 +275,8 @@
     <Content Include="Areas\Search\Views\Shared\DisplayTemplates\PageableUsersViewmodel.cshtml" />
     <Content Include="Areas\Search\Views\Shared\DisplayTemplates\UserViewModel.cshtml" />
     <Content Include="Areas\Search\Views\Shared\_PageableUsersNavigation.cshtml" />
+    <Content Include="Areas\Events\Views\Shared\_ListEventInformation.cshtml" />
+    <Content Include="Areas\Events\Views\Shared\DisplayTemplates\ListEventsViewModel.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -329,7 +331,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="Areas\Events\Views\Shared\DisplayTemplates\" />
     <Folder Include="ViewModels\Home\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>

@@ -1,0 +1,25 @@
+﻿@model Organizr.Web.Areas.Events.ViewModels.ListEventsViewModel
+
+<div class="row custom-basic-info">
+    <div class="row custom-heading">
+        <div class="col-md-6">
+            @Model.Name
+        </div>
+        <div class="col-md-6">
+            @Model.StartDate
+        </div>
+    </div>
+
+    <div class="row custom-description">
+        <div class="col-md-12 custom-description">
+            <p>
+                <span class="glyphicon glyphicon-minus"></span>
+                @Model.Description
+            </p>
+            <p style="font-size: 0.8em;text-align:right;">
+                <span class="glyphicon glyphicon-globe"></span>
+                Organiser: @Model.Organiser.Email
+            </p>
+        </div>
+    </div>
+</div>
