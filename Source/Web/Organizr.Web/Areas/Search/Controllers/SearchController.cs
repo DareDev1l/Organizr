@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using System.Net;
     using System.Web.Mvc;
     using Common;
     using Infrastructure.Mapping;
@@ -20,12 +21,12 @@
         }
 
         // GET: Search/Search
-        public ActionResult SimpleSearch(SearchViewModel model, string text, int page = 1)
+        public ActionResult SimpleSearch(SearchViewModel model, int page = 1)
         {
             if(!this.ModelState.IsValid)
             {
                 this.TempData["Error"] = GlobalConstants.InvalidSearchString;
-                return this.View();
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Bad Request"); ;
             }
             
             var allItemsCount = this.usersServices.GetAll().Count();
