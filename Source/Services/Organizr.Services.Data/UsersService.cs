@@ -1,5 +1,6 @@
 ﻿namespace MvcTemplate.Services.Data
 {
+    using System;
     using System.Data.Entity;
     using System.Linq;
     using Microsoft.AspNet.Identity;
@@ -28,6 +29,13 @@
             var users = userManager.Users;
 
             return users;
+        }
+
+        public void AddUserToFriends(User sender, User receiver)
+        {
+            receiver.Friends.Add(sender);
+            sender.Friends.Add(receiver);
+            this.Context.SaveChanges();
         }
     }
 }

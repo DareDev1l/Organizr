@@ -5,7 +5,8 @@
         <h2>@Model.Email</h2>
     </div>
     <div class="col-md-2">
-        @Html.ActionLink("Send friend request", "SendFriendRequest", "Users", new { senderId = this.ViewBag.SearcherId})
+        @Html.ActionLink("Send friend request", "SendFriendRequest", "FriendRequest", new { area = "Users", senderId = this.ViewBag.SearcherId, receiverId = Model.Id})
+        <a href="/FriendRequests/SendFriendRequest/@this.ViewBag.SearcherId/@Model.Id">Send friend request</a>
     </div>
     <div class="col-md-2">
         @Html.ActionLink("Details", "Details", "Users")

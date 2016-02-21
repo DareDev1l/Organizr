@@ -8,5 +8,7 @@
         User GetUserById(string id);
 
         IQueryable<User> GetAll();
+
+        void AddUserToFriends(User sender, User receiver);
     }
 }

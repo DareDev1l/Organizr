@@ -96,6 +96,10 @@
     <Compile Include="Migrations\201602202153531_AddedFriendshipRequets.Designer.cs">
       <DependentUpon>201602202153531_AddedFriendshipRequets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602210358329_AddedReceiverInFriendRequest.cs" />
+    <Compile Include="Migrations\201602210358329_AddedReceiverInFriendRequest.Designer.cs">
+      <DependentUpon>201602210358329_AddedReceiverInFriendRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602202153531_AddedFriendshipRequets.resx">
       <DependentUpon>201602202153531_AddedFriendshipRequets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602210358329_AddedReceiverInFriendRequest.resx">
+      <DependentUpon>201602210358329_AddedReceiverInFriendRequest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
