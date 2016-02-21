@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Organizr.Web.Areas.Users.ViewModels.FriendRequestViewModel>
+
+@{
+    ViewBag.Title = "FriendRequests";
+}
+
+<h2>Friend Requests</h2>
+
+@foreach(var friendRequest in Model)
+{
+    <h2><a href="@friendRequest.SenderId">@friendRequest.SenderEmail</a>  sent you a friend request.</h2>
+    <a href="/Accept/@friendRequest.Id">Accept</a>
+    <a href="/Decline/@friendRequest.Id">Decline</a>
+}
+

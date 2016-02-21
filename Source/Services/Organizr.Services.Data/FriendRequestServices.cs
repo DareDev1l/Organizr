@@ -1,6 +1,7 @@
 ﻿namespace MvcTemplate.Services.Data
 {
     using System;
+    using System.Linq;
     using Organizr.Data.Common;
     using Organizr.Data.Models;
 
@@ -23,6 +24,11 @@
         {
             friendRequest.IsDeleted = true;
             this.friendRequests.Save();
+        }
+
+        public IQueryable<FriendRequest> GetAll()
+        {
+            return this.friendRequests.All();
         }
     }
 }
