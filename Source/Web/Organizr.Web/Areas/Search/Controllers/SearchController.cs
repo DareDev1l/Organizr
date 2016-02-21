@@ -8,6 +8,7 @@
     using Infrastructure.Mapping;
     using MvcTemplate.Services.Data;
     using ViewModels;
+    using Microsoft.AspNet.Identity;
 
     public class SearchController : Controller
     {
@@ -32,6 +33,10 @@
             var allItemsCount = this.usersServices.GetAll().Count();
             var totalPages = (int)Math.Ceiling(allItemsCount / (decimal)ItemsPerPage);
             var itemsToSkip = (page - 1) * ItemsPerPage;
+
+            var searcherId = this.User.Identity.GetUserId();
+
+            this.ViewBag.SearcherId = searcherId;
 
             var users = this.usersServices.GetAll()
                 .Where(x => x.Email.ToLower().Contains(model.Text.ToLower()))

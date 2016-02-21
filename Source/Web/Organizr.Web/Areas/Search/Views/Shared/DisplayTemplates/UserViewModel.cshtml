@@ -5,7 +5,10 @@
         <h2>@Model.Email</h2>
     </div>
     <div class="col-md-2">
-        @Html.ActionLink("See", "Details", "Users")
+        @Html.ActionLink("Send friend request", "SendFriendRequest", "Users", new { senderId = this.ViewBag.SearcherId})
+    </div>
+    <div class="col-md-2">
+        @Html.ActionLink("Details", "Details", "Users")
     </div>
 </div>
 
