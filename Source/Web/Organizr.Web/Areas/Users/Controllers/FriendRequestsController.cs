@@ -75,5 +75,17 @@
 
             return this.Redirect("/");
         }
+
+        public ActionResult Decline(string senderId, string receiverId)
+        {
+            var friendRequest = this.friendRequestServices
+                                .GetAll()
+                                .Where(x => x.SenderId == senderId && x.ReceiverId == receiverId)
+                                .FirstOrDefault();
+
+            this.friendRequestServices.DeleteFriendRequest(friendRequest);
+
+            return this.Redirect("/");
+        }
     }
 }
