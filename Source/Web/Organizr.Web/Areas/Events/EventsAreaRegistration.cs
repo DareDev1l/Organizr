@@ -15,8 +15,14 @@ namespace Organizr.Web.Areas.Events
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
+                "Events_details",
+                "Events/{id}",
+                new { controller="Details", action="ById"}
+            );
+
+            context.MapRoute(
                 "Events_default",
-                "{controller}/{action}/{id}",
+                "Events/{controller}/{action}/{id}",
                 new { id = UrlParameter.Optional }
             );
         }

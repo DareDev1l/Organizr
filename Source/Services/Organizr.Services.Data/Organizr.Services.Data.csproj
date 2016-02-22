@@ -64,6 +64,8 @@
     <Compile Include="FriendRequestServices.cs" />
     <Compile Include="IEventsServices.cs" />
     <Compile Include="IFriendRequestServices.cs" />
+    <Compile Include="IImagesServices.cs" />
+    <Compile Include="ImagesServices.cs" />
     <Compile Include="IUsersServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersService.cs" />

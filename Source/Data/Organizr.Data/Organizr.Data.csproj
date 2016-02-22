@@ -100,6 +100,10 @@
     <Compile Include="Migrations\201602210358329_AddedReceiverInFriendRequest.Designer.cs">
       <DependentUpon>201602210358329_AddedReceiverInFriendRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602212307245_AddedImagesToUsers.cs" />
+    <Compile Include="Migrations\201602212307245_AddedImagesToUsers.Designer.cs">
+      <DependentUpon>201602212307245_AddedImagesToUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -161,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602210358329_AddedReceiverInFriendRequest.resx">
       <DependentUpon>201602210358329_AddedReceiverInFriendRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602212307245_AddedImagesToUsers.resx">
+      <DependentUpon>201602212307245_AddedImagesToUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

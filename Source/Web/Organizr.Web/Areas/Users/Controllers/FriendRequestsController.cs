@@ -51,5 +51,29 @@
 
             return this.View("Index");
         }
+
+        public ActionResult Accept(string senderId, string receiverId)
+        {
+            var friendRequest = this.friendRequestServices
+                                .GetAll()
+                                .Where(x => x.SenderId == senderId && x.ReceiverId == receiverId)
+                                .FirstOrDefault();
+
+            var sender = this.usersServices.GetUserById(friendRequest.SenderId);
+            var receiver = this.usersServices.GetUserById(friendRequest.ReceiverId);
+
+            this.usersServices.AddUserToFriends(sender, receiver);
+            /*
+            sender.Friends.Add(receiver);
+            receiver.Friends.Add(sender);
+
+            this.usersServices.Update(sender);
+            this.usersServices.Update(receiver);
+            */
+
+            this.friendRequestServices.DeleteFriendRequest(friendRequest);
+
+            return this.Redirect("/");
+        }
     }
 }

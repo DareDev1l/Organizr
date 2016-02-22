@@ -1,7 +1,6 @@
 ﻿namespace Organizr.Data.Models
 {
-    using Organizr.Data.Common.Models;
-    using Organizr.Data.Models;
+    using Common.Models;
     using System.ComponentModel.DataAnnotations;
 
     public class LocationRate : BaseModel<int>

@@ -1,0 +1,23 @@
+﻿@model Organizr.Web.Areas.Users.ViewModels.UserProfileViewModel
+
+@{
+    ViewBag.Title = "Details";
+    var base64 = Convert.ToBase64String(@Model.Image.Content);
+    var imgSrc = String.Format("data:image/{0};base64,{1}", Model.Image.FileExtension, base64);
+}
+
+<img src="@imgSrc" style="width: 200px; height:200px;"/>
+
+<h2>@Model.FirstName @Model.LastName</h2>
+
+@using (Html.BeginForm("UploadImage", "ProfileImage", null, FormMethod.Post, new { enctype = "multipart/form-data", action="/ProfileImage/UploadImage" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Upload profile picture</legend>
+        <div class="editor-field">
+            <input id="ImagePath" title="Upload a profile image" type="file" name="file" />
+        </div>
+        <p><input type="submit" value="Upload" /></p>
+    </fieldset>
+}

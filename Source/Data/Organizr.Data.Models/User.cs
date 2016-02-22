@@ -28,13 +28,19 @@
             this.friendRequests = new HashSet<FriendRequest>();
         }
 
+        [Required]
         [MinLength(1)]
         [MaxLength(50)]
         public string FirstName { get; set; }
 
+        [Required]
         [MinLength(1)]
         [MaxLength(50)]
         public string LastName { get; set; }
+
+        public int? ImageId { get; set; }
+
+        public virtual Image Image { get; set; }
 
         public DateTime? BirthDay { get; set; }
 

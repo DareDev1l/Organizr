@@ -10,5 +10,7 @@
         IQueryable<User> GetAll();
 
         void AddUserToFriends(User sender, User receiver);
+
+        void Update(User user);
     }
 }

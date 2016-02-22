@@ -33,7 +33,7 @@
                 // Create admin user
                 var userStore = new UserStore<User>(context);
                 var userManager = new UserManager<User>(userStore);
-                var user = new User { UserName = AdministratorUserName, Email = AdministratorUserName };
+                var user = new User { UserName = AdministratorUserName, Email = AdministratorUserName, FirstName = "Admin", LastName = "Admin" };
                 userManager.Create(user, AdministratorPassword);
 
                 // Assign user to admin role

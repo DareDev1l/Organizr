@@ -212,8 +212,11 @@
     <Compile Include="Areas\Search\ViewModels\SearchViewModel.cs" />
     <Compile Include="Areas\Search\ViewModels\UserViewModel.cs" />
     <Compile Include="Areas\Users\Controllers\FriendRequestsController.cs" />
+    <Compile Include="Areas\Users\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Users\Controllers\ProfileImageController.cs" />
     <Compile Include="Areas\Users\UsersAreaRegistration.cs" />
     <Compile Include="Areas\Users\ViewModels\FriendRequestViewModel.cs" />
+    <Compile Include="Areas\Users\ViewModels\UserProfileViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -284,6 +287,7 @@
     <Content Include="Areas\Users\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Users\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Users\Views\FriendRequests\GetFriendRequests.cshtml" />
+    <Content Include="Areas\Users\Views\Profile\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -338,8 +342,10 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Users\Views\ProfileImage\" />
     <Folder Include="ViewModels\Home\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
