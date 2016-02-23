@@ -27,6 +27,14 @@ textarea {
     margin-top: 30px;
 }
 
+.statistics-heading {
+    background-color: #337AB7;
+    font-size: 1.2em;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    padding: 5px;
+}
+
 .custom-heading {
     background-color: #5CB85C;
     font-size: 1.5em;
