@@ -11,6 +11,12 @@
 
         Event GetById(string urlId);
 
+        Event GetById(int id);
+
+        void Delete(Event eventToDelete);
+
         Event AddUserToEvent(string eventId, User user);
+
+        void Update(Event eventToUpdate);
     }
 }

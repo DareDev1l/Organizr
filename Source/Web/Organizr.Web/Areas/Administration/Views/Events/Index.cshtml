@@ -1,0 +1,33 @@
+﻿@using Kendo.Mvc.UI
+@(Html.Kendo().Grid<Organizr.Web.Areas.Administration.ViewModels.Events.EventViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Id);
+          columns.Bound(c => c.Name);
+          columns.Bound(c => c.Description);
+          columns.Bound(c => c.StartDate).Format("{0:yyyy-MM-dd HH:mm}");
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create();
+      })
+      .ColumnMenu()
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable =>
+      {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Events_Read", "Events"))
+          .Create(create => create.Action("Events_Create", "Events"))
+          .Update(update => update.Action("Events_Update", "Events"))
+          .Destroy(destroy => destroy.Action("Events_Destroy", "Events"))
+      )
+)

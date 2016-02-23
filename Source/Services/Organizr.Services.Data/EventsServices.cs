@@ -38,6 +38,19 @@
             return eventById;
         }
 
+        public Event GetById(int id)
+        {
+            var eventById = this.events.GetById(id);
+
+            return eventById;
+        }
+
+        public void Delete(Event eventToDelete)
+        {
+            this.events.Delete(eventToDelete);
+            this.events.Save();
+        }
+
         public Event AddUserToEvent(string eventId, User user)
         {
             var eventToFind = this.GetById(eventId);
@@ -45,6 +58,11 @@
             this.events.Save();
 
             return eventToFind;
+        }
+
+        public void Update(Event eventToUpdate)
+        {
+            this.events.Save();
         }
     }
 }
