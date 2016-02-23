@@ -9,12 +9,14 @@
     public class EventsServices : IEventsServices
     {
         private readonly IDbRepository<Event> events;
+        private readonly IUsersServices users;
         private readonly IIdentifierProvider identifierProvider;
 
-        public EventsServices(IDbRepository<Event> eventsRepository, IIdentifierProvider identifierProvider)
+        public EventsServices(IDbRepository<Event> eventsRepository, IIdentifierProvider identifierProvider, IUsersServices users)
         {
             this.events = eventsRepository;
             this.identifierProvider = identifierProvider;
+            this.users = users;
         }
 
         public Event CreateEvent(Event eventToRegister)
@@ -55,8 +57,9 @@
         {
             var eventToFind = this.GetById(eventId);
             eventToFind.Participants.Add(user);
+            user.EventsParticipated.Add(eventToFind);
             this.events.Save();
-
+            this.users.Update(user);
             return eventToFind;
         }
 

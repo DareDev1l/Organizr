@@ -1,5 +1,5 @@
 ﻿@model Organizr.Web.Areas.Events.ViewModels.PageableListEventsViewModel
-
+@using Kendo.Mvc.UI
 @{
     ViewBag.Title = "ListEvents";
 }
@@ -9,8 +9,28 @@
 
 @using (Html.BeginForm("Filter", "Home", FormMethod.Get, new { action = "/Events/Filter", id="search-form"}))
 {
-    <label for="contains">Contains</label>
-    <input type="text" class="form-control" name="contains" style="display: inline-block;"/>
+    <div class="col-md-4">
+        <label for="contains">Contains</label>
+        <input type="text" class="form-control" name="contains" style="display: inline-block;" />
+    </div>
+    <div class="col-md-3">
+        @Html.Label("From")
+        @(Html.Kendo().DatePicker()
+              .Name("from")
+              .Value(string.Empty)
+              .Format("MM/dd/yyyy")
+              .HtmlAttributes(new { style = "width: 100%", @class="form-control"})
+        )
+    </div>
+    <div class="col-md-3">
+        @Html.Label("From")
+        @(Html.Kendo().DatePicker()
+              .Name("to")
+              .Value(string.Empty)
+              .Format("MM/dd/yyyy")
+              .HtmlAttributes(new { style = "width: 100%", @class="form-control" })
+        )
+    </div>
     <input type="hidden" name="page" id="hiddenPage" value="@Model.CurrentPage"/>
     <input type="submit" value="Search" class="btn btn-primary" />
 }
@@ -65,11 +85,6 @@
     <script>
         var totalPages = $('#totalPages').val();
         var currentPage = $('#hiddenPage').val();
-
-        if (currentPage > totalPages) {
-            $('#hiddenPage').val(1);
-            $('#search-form').submit();
-        }
 
         $('.pagination li a').click(function () {
             var value = $(this).text();

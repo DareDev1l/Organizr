@@ -7,12 +7,10 @@
 
     public class Event : BaseModel<int>
     {
-        private ICollection<User> candidates;
         private ICollection<User> participants;
 
         public Event()
         {
-            this.candidates = new HashSet<User>();
             this.participants = new HashSet<User>();
         }
 
@@ -39,19 +37,6 @@
         public virtual Coordinates Coordinates { get; set; }
 
         public bool HasFinished { get; set; }
-
-        public virtual ICollection<User> Candidates
-        {
-            get
-            {
-                return this.candidates;
-            }
-
-            set
-            {
-                this.candidates = value;
-            }
-        }
 
         public virtual ICollection<User> Participants
         {

@@ -64,10 +64,18 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Event>()
+                .HasMany(e => e.Participants)
+                .WithMany(u => u.EventsParticipated)
+                .Map(mc =>
+                {
+                    mc.ToTable("PostJoinTag");
+                    mc.MapLeftKey("EventId");
+                    mc.MapRightKey("UserId");
+                });
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
-        //public System.Data.Entity.DbSet<Organizr.Web.Areas.Events.ViewModels.CreateEventViewModel> CreateEventViewModels { get; set; }
     }
 }

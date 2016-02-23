@@ -26,7 +26,7 @@
             return this.View(events);
         }
 
-        public ActionResult Filter(int page = 1, string contains = "")
+        public ActionResult Filter(int page = 1, string contains = "", string from = "", string to = "")
         {
             const int ItemsPerPage = 5;
 
@@ -35,6 +35,18 @@
             if (!string.IsNullOrEmpty(contains))
             {
                 events = events.Where(x => x.Name.ToLower().Contains(contains.ToLower()) || x.Description.ToLower().Contains(contains.ToLower())).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(from))
+            {
+                var fromDate = DateTime.Parse(from);
+                events = events.Where(x => x.StartDate >= fromDate).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(to))
+            {
+                var toDate = DateTime.Parse(to);
+                events = events.Where(x => x.StartDate <= toDate).ToList();
             }
 
             int filteredEventsCount = events.Count;

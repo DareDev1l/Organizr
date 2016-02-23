@@ -61,54 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201602130127165_InitialDb.cs" />
-    <Compile Include="Migrations\201602130127165_InitialDb.Designer.cs">
-      <DependentUpon>201602130127165_InitialDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602130236181_CreatedBasicModels.cs" />
-    <Compile Include="Migrations\201602130236181_CreatedBasicModels.Designer.cs">
-      <DependentUpon>201602130236181_CreatedBasicModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602130250003_Added LocationsOwned to User.cs" />
-    <Compile Include="Migrations\201602130250003_Added LocationsOwned to User.Designer.cs">
-      <DependentUpon>201602130250003_Added LocationsOwned to User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602131559254_FixedUserIds.cs" />
-    <Compile Include="Migrations\201602131559254_FixedUserIds.Designer.cs">
-      <DependentUpon>201602131559254_FixedUserIds.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602131702366_RemoveRequiredForUserName.cs" />
-    <Compile Include="Migrations\201602131702366_RemoveRequiredForUserName.Designer.cs">
-      <DependentUpon>201602131702366_RemoveRequiredForUserName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602172327174_AddedLocationForEvents.cs" />
-    <Compile Include="Migrations\201602172327174_AddedLocationForEvents.Designer.cs">
-      <DependentUpon>201602172327174_AddedLocationForEvents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602172357376_FixDatabase.cs" />
-    <Compile Include="Migrations\201602172357376_FixDatabase.Designer.cs">
-      <DependentUpon>201602172357376_FixDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180019153_AddedCoordinates.cs" />
-    <Compile Include="Migrations\201602180019153_AddedCoordinates.Designer.cs">
-      <DependentUpon>201602180019153_AddedCoordinates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602202153531_AddedFriendshipRequets.cs" />
-    <Compile Include="Migrations\201602202153531_AddedFriendshipRequets.Designer.cs">
-      <DependentUpon>201602202153531_AddedFriendshipRequets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602210358329_AddedReceiverInFriendRequest.cs" />
-    <Compile Include="Migrations\201602210358329_AddedReceiverInFriendRequest.Designer.cs">
-      <DependentUpon>201602210358329_AddedReceiverInFriendRequest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602212307245_AddedImagesToUsers.cs" />
-    <Compile Include="Migrations\201602212307245_AddedImagesToUsers.Designer.cs">
-      <DependentUpon>201602212307245_AddedImagesToUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602222233271_AddedAboutAndGenderToUser.cs" />
-    <Compile Include="Migrations\201602222233271_AddedAboutAndGenderToUser.Designer.cs">
-      <DependentUpon>201602222233271_AddedAboutAndGenderToUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -139,44 +91,6 @@
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602130127165_InitialDb.resx">
-      <DependentUpon>201602130127165_InitialDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602130236181_CreatedBasicModels.resx">
-      <DependentUpon>201602130236181_CreatedBasicModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602130250003_Added LocationsOwned to User.resx">
-      <DependentUpon>201602130250003_Added LocationsOwned to User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602131559254_FixedUserIds.resx">
-      <DependentUpon>201602131559254_FixedUserIds.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602131702366_RemoveRequiredForUserName.resx">
-      <DependentUpon>201602131702366_RemoveRequiredForUserName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602172327174_AddedLocationForEvents.resx">
-      <DependentUpon>201602172327174_AddedLocationForEvents.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602172357376_FixDatabase.resx">
-      <DependentUpon>201602172357376_FixDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180019153_AddedCoordinates.resx">
-      <DependentUpon>201602180019153_AddedCoordinates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602202153531_AddedFriendshipRequets.resx">
-      <DependentUpon>201602202153531_AddedFriendshipRequets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602210358329_AddedReceiverInFriendRequest.resx">
-      <DependentUpon>201602210358329_AddedReceiverInFriendRequest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602212307245_AddedImagesToUsers.resx">
-      <DependentUpon>201602212307245_AddedImagesToUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602222233271_AddedAboutAndGenderToUser.resx">
-      <DependentUpon>201602222233271_AddedAboutAndGenderToUser.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

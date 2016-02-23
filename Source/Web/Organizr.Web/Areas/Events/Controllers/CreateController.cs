@@ -51,7 +51,7 @@ namespace Organizr.Web.Areas.Events.Controllers
 
             this.eventsServices.CreateEvent(eventToCreate);
 
-            return this.RedirectToAction("List", "List");
+            return this.Redirect("~/Events/Filter");
         }
     }
 }
