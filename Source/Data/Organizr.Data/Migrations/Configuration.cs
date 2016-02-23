@@ -1,13 +1,13 @@
 ﻿namespace Organizr.Data.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
+    using System.IO;
     using System.Linq;
-
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-
+    using Models;
     using Organizr.Common;
-    using Organizr.Data.Models;
 
     public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
@@ -38,6 +38,25 @@
 
                 // Assign user to admin role
                 userManager.AddToRole(user.Id, GlobalConstants.AdministratorRoleName);
+
+                System.Drawing.Image img = System.Drawing.Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "App_Data/Pictures/default-profile.png");
+                byte[] bytes;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    bytes = ms.ToArray();
+                }
+
+                var defaultPic = new Image()
+                {
+                    Id = 1,
+                    FileName = "default-profile",
+                    Content = bytes,
+                    FileExtension = "png"
+                };
+
+                context.Images.Add(defaultPic);
+                context.SaveChanges();
             }
         }
     }
