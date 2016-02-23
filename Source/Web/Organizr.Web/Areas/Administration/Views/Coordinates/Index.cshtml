@@ -1,0 +1,32 @@
+﻿@using Kendo.Mvc.UI
+@(Html.Kendo().Grid<Organizr.Web.Areas.Administration.ViewModels.Events.CoordinatesViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Id);
+          columns.Bound(c => c.Longitude);
+          columns.Bound(c => c.Latitude);
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create();
+      })
+      .ColumnMenu()
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable =>
+      {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Coordinates_Read", "Coordinates"))
+          .Create(create => create.Action("Coordinates_Create", "Coordinates"))
+          .Update(update => update.Action("Coordinates_Update", "Coordinates"))
+          .Destroy(destroy => destroy.Action("Coordinates_Destroy", "Coordinates"))
+      )
+)

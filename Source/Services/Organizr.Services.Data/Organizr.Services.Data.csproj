@@ -60,8 +60,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoordinatesServices.cs" />
     <Compile Include="EventsServices.cs" />
     <Compile Include="FriendRequestServices.cs" />
+    <Compile Include="ICoordinatesServices.cs" />
     <Compile Include="IEventsServices.cs" />
     <Compile Include="IFriendRequestServices.cs" />
     <Compile Include="IImagesServices.cs" />

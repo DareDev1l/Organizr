@@ -201,7 +201,10 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\CoordinatesController.cs" />
     <Compile Include="Areas\Administration\Controllers\EventsController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Events\CoordinatesInputModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\Events\CoordinatesViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Events\EventInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Events\EventViewModel.cs" />
     <Compile Include="Areas\Events\Controllers\CreateController.cs" />
@@ -365,6 +368,7 @@
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Events\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Coordinates\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -420,6 +424,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\ViewModels\Coordinates\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\Users\Views\ProfileImage\" />
     <Folder Include="ViewModels\Home\" />
