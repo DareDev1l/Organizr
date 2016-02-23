@@ -1,0 +1,81 @@
+﻿@model Organizr.Web.Areas.Events.ViewModels.PageableListEventsViewModel
+
+@{
+    ViewBag.Title = "ListEvents";
+}
+
+<h2>Events search</h2>
+<input type="hidden" id="totalPages" value="@Model.TotalPages" />
+
+@using (Html.BeginForm("Filter", "Home", FormMethod.Get, new { action = "/Events/Filter", id="search-form"}))
+{
+    <label for="contains">Contains</label>
+    <input type="text" class="form-control" name="contains" style="display: inline-block;"/>
+    <input type="hidden" name="page" id="hiddenPage" value="@Model.CurrentPage"/>
+    <input type="submit" value="Search" class="btn btn-primary" />
+}
+
+@foreach (var item in Model.Events)
+{
+    //@Html.DisplayForModel(item)
+    <div class="row custom-basic-info">
+        <div class="row custom-heading">
+            <div class="col-md-9">
+                @item.Name
+            </div>
+            <div class="col-md-3">
+                @item.StartDate
+            </div>
+        </div>
+
+        <div class="row custom-description">
+            <div class="col-md-12 custom-description">
+                <p>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    @item.Description
+                </p>
+                <p style="font-size: 0.8em;text-align:right;">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    Organiser: @item.Organiser.Email
+                    <a href="@item.Url" class="btn btn-success">Details</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+}
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            var className = string.Empty;
+
+            if(i == Model.CurrentPage)
+            {
+                className = "active";
+            }
+
+            <li class="@className"><a>@i</a></li>
+        }
+    </ul>
+</nav>
+
+@section Scripts {
+    <script>
+        var totalPages = $('#totalPages').val();
+        var currentPage = $('#hiddenPage').val();
+
+        if (currentPage > totalPages) {
+            $('#hiddenPage').val(1);
+            $('#search-form').submit();
+        }
+
+        $('.pagination li a').click(function () {
+            var value = $(this).text();
+
+            $('#hiddenPage').val(value);
+            $('#search-form').submit();
+        })
+    </script>
+}

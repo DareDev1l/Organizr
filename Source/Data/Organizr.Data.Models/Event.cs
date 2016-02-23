@@ -2,10 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-
-    using Organizr.Data.Common.Models;
-    using Organizr.Data.Models;
     using System.ComponentModel.DataAnnotations;
+    using Common.Models;
 
     public class Event : BaseModel<int>
     {
