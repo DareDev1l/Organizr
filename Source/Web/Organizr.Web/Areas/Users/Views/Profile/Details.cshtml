@@ -6,11 +6,129 @@
     var imgSrc = String.Format("data:image/{0};base64,{1}", Model.Image.FileExtension, base64);
 }
 
-<img src="@imgSrc" style="width: 200px; height:200px;"/>
+<div class="profile-details">
+    <div class="row">
+        <div class="col-md-8 gray-background">
+            <div class="row">
+                <div class="col-md-3">
+                    <div>
+                        <img src="@imgSrc" style="width: 160px; height:160px;" class="profile-picture" />
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h1>@Model.FirstName @Model.LastName</h1>
+                        </div>
+                        <div class="col-md-2">
+                            <h2><a href="/Me/Edit">Edit</a></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>@Model.About</p>
+                        </div>
+                    </div>
 
-<h2>@Model.FirstName @Model.LastName</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-10">
+                    <input type="button" class="btn btn-primary add-friends-button" value="Add friend" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-@using (Html.BeginForm("UploadImage", "ProfileImage", null, FormMethod.Post, new { enctype = "multipart/form-data", action="/ProfileImage/UploadImage" }))
+<div class="row" style="margin-top:15px;">
+    <div class="col-md-7">
+        <div class="row custom-heading">
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-th"></span>
+                Events visited
+            </div>
+        </div>
+        <div class="row custom-description">
+            @if (@Model.EventsParticipated.Count == 0)
+            {
+                <div class="no-data" style="margin-top: 40px;">
+                    There are not events that this user visited. All events can be found <a href="/Events/List/All">here</a>.
+                </div>
+            }
+            else
+            {
+                <ul>
+                    @foreach (var eventVisited in Model.EventsParticipated)
+                    {
+                        <li>
+                            <h2 style="margin: 25px;"><a href="@eventVisited.Id">@eventVisited.Name</a></h2>
+                            <p>@eventVisited.Description</p>
+                            <span>@eventVisited.Participants.Count participants</span>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+
+        <div class="row custom-heading" style="margin-top: 15px;">
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-th"></span>
+                Events Organised
+            </div>
+        </div>
+        <div class="row custom-description">
+            @if (@Model.EventsOrganised.Count == 0)
+            {
+                <div class="no-data" style="margin-top: 40px;">
+                    There are not events that this user organised. To organise an event go <a href="/Events/Create/Event">here</a>.
+                </div>
+            }
+            else
+            {
+                <ul style="list-style-type:none;">
+                    @foreach (var eventOrganised in Model.EventsParticipated)
+                    {
+                        <li>
+                            <h2 style="margin: 25px;"><a href="/Events/@eventOrganised.Id">@eventOrganised.Name</a></h2>
+                            <p>@eventOrganised.Description</p>
+                            <span>@eventOrganised.Participants.Count participants</span>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+    <div class="col-md-4 col-md-offset-1">
+        <div class="row custom-heading-right">
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-th"></span>
+                Friends
+            </div>
+        </div>
+        <div class="row custom-description">
+            @if (@Model.Friends.Count == 0)
+            {
+                <div class="no-data" style="margin-top: 40px;">
+                    There are no friends to show. You can search for friends from the search bar!
+                </div>
+            }
+            else
+            {
+                <ul>
+                    @foreach (var friend in Model.Friends)
+                    {
+                        <li>
+                            <h2>@friend.FirstName @friend.LastName</h2>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div> 
+
+@using (Html.BeginForm("UploadImage", "ProfileImage", null, FormMethod.Post, new { enctype = "multipart/form-data", action = "/ProfileImage/UploadImage" }))
 {
     @Html.ValidationSummary(true)
     <fieldset>

@@ -35,6 +35,14 @@ textarea {
     padding: 5px;
 }
 
+.custom-heading-right {
+    background-color: #5CB85C;
+    font-size: 1.5em;
+    border-radius: 0px 10px 0px 0px;
+    color: white;
+    padding: 5px;
+}
+
 .custom-description {
     background-color: #f2f2f2;
     font-size: 1.2em;
@@ -70,4 +78,26 @@ textarea {
 
 .searchBox {
     margin-top: 20px;
+}
+
+.profile-details {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.profile-picture {
+    border: 2px solid #5CB85C;
+    margin: 10px;
+}
+
+.gray-background {
+    background-color: #f2f2f2;
+}
+
+.add-friends-button {
+    margin: 15px;
+}
+
+.no-data {
+    min-height: 100px;
 }

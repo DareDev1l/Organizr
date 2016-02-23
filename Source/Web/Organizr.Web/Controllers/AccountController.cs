@@ -176,7 +176,8 @@
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    BirthDay = model.BirthDay
+                    BirthDay = model.BirthDay,
+                    ImageId = 1
                 };
 
                 var result = await this.UserManager.CreateAsync(user, model.Password);

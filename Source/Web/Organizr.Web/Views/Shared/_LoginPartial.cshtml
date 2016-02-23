@@ -12,7 +12,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    @Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = string.Empty }, htmlAttributes: new { title = "Manage" })
+                    <a href="/Me">Profile</a>
                 </li>
                 <li>
                     @Html.ActionLink("My events", "Index", "Events", routeValues: new { area = string.Empty }, htmlAttributes: new { title = "Manage" })

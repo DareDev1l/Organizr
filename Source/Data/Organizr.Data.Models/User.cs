@@ -26,6 +26,7 @@
             this.locationsOwned = new HashSet<Location>();
             this.friends = new HashSet<User>();
             this.friendRequests = new HashSet<FriendRequest>();
+            this.About = "About me!";
         }
 
         [Required]
@@ -38,11 +39,15 @@
         [MaxLength(50)]
         public string LastName { get; set; }
 
+        public string About { get; set; }
+
+        public bool Gender { get; set; }
+
+        public DateTime? BirthDay { get; set; }
+
         public int? ImageId { get; set; }
 
         public virtual Image Image { get; set; }
-
-        public DateTime? BirthDay { get; set; }
 
         public ICollection<User> Friends
         {

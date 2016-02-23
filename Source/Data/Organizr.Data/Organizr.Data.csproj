@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201602212307245_AddedImagesToUsers.Designer.cs">
       <DependentUpon>201602212307245_AddedImagesToUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602222233271_AddedAboutAndGenderToUser.cs" />
+    <Compile Include="Migrations\201602222233271_AddedAboutAndGenderToUser.Designer.cs">
+      <DependentUpon>201602222233271_AddedAboutAndGenderToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -168,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602212307245_AddedImagesToUsers.resx">
       <DependentUpon>201602212307245_AddedImagesToUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602222233271_AddedAboutAndGenderToUser.resx">
+      <DependentUpon>201602222233271_AddedAboutAndGenderToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
