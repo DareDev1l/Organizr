@@ -8,7 +8,7 @@
 
     // TODO: Why BaseModel<int> instead BaseModel<TKey>?
     public class DbRepository<T> : IDbRepository<T>
-        where T : BaseModel<int>
+        where T : BaseModel<T>
     {
         public DbRepository(DbContext context)
         {

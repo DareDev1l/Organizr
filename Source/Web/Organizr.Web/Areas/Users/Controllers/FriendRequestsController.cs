@@ -49,7 +49,7 @@
 
             this.friendRequestServices.CreateFriendRequest(friendshipRequest);
 
-            return this.View("Index");
+            return this.Redirect("/Me");
         }
 
         public ActionResult Accept(string senderId, string receiverId)

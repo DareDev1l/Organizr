@@ -1,17 +1,13 @@
-﻿using Microsoft.AspNet.Identity;
-using MvcTemplate.Services.Data;
-using Organizr.Data.Models;
-using Organizr.Services.Web;
-using Organizr.Web.Areas.Events.ViewModels;
-using Organizr.Web.Infrastructure.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Organizr.Web.Areas.Events.Controllers
+﻿namespace Organizr.Web.Areas.Events.Controllers
 {
+    using System;
+    using System.Web.Mvc;
+    using Microsoft.AspNet.Identity;
+    using MvcTemplate.Services.Data;
+    using Organizr.Data.Models;
+    using Organizr.Services.Web;
+    using Organizr.Web.Areas.Events.ViewModels;
+
     [Authorize]
     public class CreateController : Controller
     {

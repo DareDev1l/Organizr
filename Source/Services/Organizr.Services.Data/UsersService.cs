@@ -1,58 +1,40 @@
 ﻿namespace MvcTemplate.Services.Data
 {
     using System;
-    using System.Data.Entity;
     using System.Linq;
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
+    using Organizr.Data.Common;
     using Organizr.Data.Models;
 
     public class UsersService : IUsersServices
     {
-        public UsersService(DbContext context)
+        private readonly IDbRepository<User> users;
+
+        public UsersService(DbRepository<User> users)
         {
-            this.Context = context;
-        }
-
-        private DbContext Context { get; }
-
-        public User GetUserById(string id)
-        {
-            var userManager = new UserManager<User>(new UserStore<User>(this.Context));
-            var user = userManager.FindById(id);
-            return user;
-        }
-
-        public IQueryable<User> GetAll()
-        {
-            var userManager = new UserManager<User>(new UserStore<User>(this.Context));
-            var users = userManager.Users;
-
-            return users;
+            this.users = users;
         }
 
         public void AddUserToFriends(User sender, User receiver)
         {
-            receiver.Friends.Add(sender);
             sender.Friends.Add(receiver);
+            this.Update(sender);
+            receiver.Friends.Add(sender);
+            this.Update(receiver);
+        }
 
-            var store = new UserStore<User>(this.Context);
-            var userManager = new UserManager<User>(store);
-            var context = store.Context;
+        public User GetUserById(string id)
+        {
+            return this.users.All().Where(x => x.Id == id).FirstOrDefault();
+        }
 
-            userManager.Update(receiver);
-            userManager.Update(sender);
-            context.SaveChanges();
+        public IQueryable<User> GetAll()
+        {
+            return this.users.All();
         }
 
         public void Update(User user)
         {
-            var store = new UserStore<User>(this.Context);
-            var userManager = new UserManager<User>(store);
-            var context = store.Context;
-
-            userManager.Update(user);
-            context.SaveChanges();
+            this.users.Save();
         }
     }
 }

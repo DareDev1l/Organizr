@@ -59,7 +59,9 @@
             eventToFind.Participants.Add(user);
             this.events.Save();
 
-            user.EventsParticipated.Add(eventToFind);
+            var eventToAdd = this.GetById(eventId);
+
+            user.EventsParticipated.Add(eventToAdd);
             this.users.Update(user);
 
             return eventToFind;

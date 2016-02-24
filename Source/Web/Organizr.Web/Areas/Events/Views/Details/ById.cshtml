@@ -20,7 +20,7 @@
 
             $.post(postUrl, { eventId: eventId, value: rate }, function (data) {
                 $('.rate-holder').hide();
-                $('#rate-message').val("You rated this " + data.RateValue + "/5");
+                $('#rate-message').text("You rated this " + data.RateValue + "/5");
 
                 // $('.successful-rate').show();
                 // $('.successful-rate').val("You rated this " + data.RateValue + "/5");

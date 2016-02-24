@@ -59,7 +59,7 @@
 
             var servicesAssembly = Assembly.GetAssembly(typeof(IEventsServices));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
-
+            
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>))
                 .InstancePerRequest();
