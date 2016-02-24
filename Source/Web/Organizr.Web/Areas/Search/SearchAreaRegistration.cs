@@ -16,8 +16,8 @@ namespace Organizr.Web.Areas.Search
         {
             context.MapRoute(
                 "Search_default",
-                "Search/User/{page}",
-                new { controller = "Search", action = "SimpleSearch", page = UrlParameter.Optional }
+                "Search",
+                new { controller = "Search", action = "SimpleSearch" }
             );
         }
     }

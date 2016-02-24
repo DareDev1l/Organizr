@@ -1,6 +1,6 @@
 ﻿@model Organizr.Web.Areas.Search.ViewModels.SearchViewModel
 
-@Html.EditorFor(m => m.Text, new { @class = "form-control searchBox" })
+<input type="text" name="search" class="form-control" style="display:inline !important;margin-top:8px;"/>
 
 <button type="submit" class="btn btn-primary">
     <i class="glyphicon glyphicon-search"></i>
