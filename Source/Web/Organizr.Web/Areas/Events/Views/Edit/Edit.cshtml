@@ -1,0 +1,25 @@
+﻿@model Organizr.Web.Areas.Events.ViewModels.EventEditViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit event</h2>
+
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm("Edit", "Edit", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <label for="name">Event name</label>
+    <input type="text" id="name" class="form-control" name="Name" value="@Model.Name">
+
+    <label for="description">Description</label>
+    <input type="text" id="description" class="form-control" name="Description" value="@Model.Description">
+
+    <label for="startdate">Start date</label>
+    <input type="text" id="startdate" class="form-control" name="StartDate" value="@Model.StartDate">
+
+    <input type="submit" class="btn btn-primary" value="Save" />
+}

@@ -1,11 +1,11 @@
 ﻿namespace Organizr.Web.Areas.Events.Controllers
 {
     using System.Web.Mvc;
+    using Microsoft.AspNet.Identity;
     using MvcTemplate.Services.Data;
     using Organizr.Web.Infrastructure.Mapping;
     using ViewModels;
     using Web.Controllers;
-    using Microsoft.AspNet.Identity;
 
     public class DetailsController : BaseController
     {

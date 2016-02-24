@@ -1,4 +1,5 @@
 ﻿@model Organizr.Web.Areas.Events.ViewModels.EventDetailsViewModel
+@using Microsoft.AspNet.Identity;
 
 @{
     ViewBag.Title = "Index";
@@ -6,3 +7,4 @@
 
 @Html.Partial("_BasicEventInformation", Model)
 @Html.Partial("_AdditionalEventInformation", Model)
+

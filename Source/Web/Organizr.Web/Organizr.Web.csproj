@@ -209,10 +209,12 @@
     <Compile Include="Areas\Administration\ViewModels\Events\EventViewModel.cs" />
     <Compile Include="Areas\Events\Controllers\CreateController.cs" />
     <Compile Include="Areas\Events\Controllers\DetailsController.cs" />
+    <Compile Include="Areas\Events\Controllers\EditController.cs" />
     <Compile Include="Areas\Events\Controllers\ListController.cs" />
     <Compile Include="Areas\Events\EventsAreaRegistration.cs" />
     <Compile Include="Areas\Events\ViewModels\CreateEventViewModel.cs" />
     <Compile Include="Areas\Events\ViewModels\EventDetailsViewModel.cs" />
+    <Compile Include="Areas\Events\ViewModels\EventEditViewModel.cs" />
     <Compile Include="Areas\Events\ViewModels\ListEventsViewModel.cs" />
     <Compile Include="Areas\Events\ViewModels\PageableListEventsViewModel.cs" />
     <Compile Include="Areas\Search\Controllers\SearchController.cs" />
@@ -371,6 +373,7 @@
     <Content Include="Areas\Administration\Views\Events\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Coordinates\Index.cshtml" />
     <Content Include="Areas\Users\Views\Profile\Edit.cshtml" />
+    <Content Include="Areas\Events\Views\Edit\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

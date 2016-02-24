@@ -1,11 +1,17 @@
 ﻿@model Organizr.Web.Areas.Events.ViewModels.EventDetailsViewModel
-
+@using Microsoft.AspNet.Identity;
 <div class="row custom-basic-info">
     <div class="row custom-heading">
         <div class="col-md-8">
             <span class="glyphicon glyphicon-asterisk"></span>
             @Model.Name
         </div>
+        @if (Model.Organiser.Id == this.User.Identity.GetUserId())
+        {
+            <div class="col-md-2 col-md-offset-2">
+                <a href="/Events/@Model.Id/Edit" style="color:white;">Edit</a>
+            </div>
+        }
     </div>
 
     <div class="row custom-description">
