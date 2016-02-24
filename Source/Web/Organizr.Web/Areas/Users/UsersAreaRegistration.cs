@@ -33,6 +33,12 @@ namespace Organizr.Web.Areas.Users
             );
 
             context.MapRoute(
+                "OtherUserProfile",
+                "Users/{id}",
+                new { controller = "Profile", action = "DetailsOf" }
+            );
+
+            context.MapRoute(
                 "Users_Profile",
                 "Me",
                 new { controller = "Profile", action = "Details" }

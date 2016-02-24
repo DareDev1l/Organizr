@@ -377,6 +377,7 @@
     <Content Include="Areas\Users\Views\Profile\Edit.cshtml" />
     <Content Include="Areas\Events\Views\Edit\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Users\Views\Profile\DetailsOf.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

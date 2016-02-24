@@ -10,10 +10,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div>
-                        <img src="@Model.Imagesrc" style="width: 160px; height:160px;" class="profile-picture" />
-                    </div>
-                    <div>
-                        <input type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" value="Edit" />
+                        <img src="@Model.ImageSrc" style="width: 160px; height:160px;" class="profile-picture" />
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -21,16 +18,12 @@
                         <div class="col-md-10">
                             <h1>@Model.FirstName @Model.LastName</h1>
                         </div>
-                        <div class="col-md-2">
-                            <h2><a href="/Me/Edit">Edit</a></h2>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <p>@Model.About</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -131,30 +124,6 @@
                     }
                 </ul>
             }
-        </div>
-    </div>
-</div> 
-
-<!-- Modal for uploading profile picture -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                @using (Html.BeginForm("UploadImage", "ProfileImage", null, FormMethod.Post, new { enctype = "multipart/form-data", action = "/ProfileImage/UploadImage" }))
-                {
-                    @Html.ValidationSummary(true)
-                    <fieldset>
-                        <legend>Upload profile picture</legend>
-                        <div class="editor-field">
-                            <input id="ImagePath" title="Upload a profile image" type="file" name="file" />
-                        </div>
-                        <p><input type="submit" value="Upload" /></p>
-                    </fieldset>
-                }
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
         </div>
     </div>
 </div>

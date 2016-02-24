@@ -24,6 +24,15 @@
             return this.View(userToShow);
         }
 
+        public ActionResult DetailsOf(string id)
+        {
+            var userId = this.User.Identity.GetUserId();
+            var userToShow = this.Mapper
+                                .Map<UserProfileViewModel>(this.usersServices.GetUserById(userId));
+
+            return this.View(userToShow);
+        }
+
         [HttpGet]
         public ActionResult Edit()
         {
