@@ -13,6 +13,7 @@
         public string Name { get; set; }
 
         [MinLength(10)]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
         public DateTime StartDate { get; set; }

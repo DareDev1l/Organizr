@@ -18,8 +18,25 @@
                     @Html.ActionLink("My events", "Index", "Events", routeValues: new { area = string.Empty }, htmlAttributes: new { title = "Manage" })
                 </li>
                 <li>
-                    <a href="/Me/FriendRequests">Friend Requests</a>
+                    <a href="/Me/FriendRequests">Friend Requests <span class="badge" id="friendRequestsCount">0</span></a>
                 </li>
+                @if (this.User.IsInRole("Administrator"))
+                {
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a href="/">Administration</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a href="/Administration/Events">Events</a>
+                    </li>
+                    <li>
+                        <a href="/Administration/Coordinates">Coordinates</a>
+                    </li>
+                    <li>
+                        <a href="/Administration/Users">Users</a>
+                    </li>
+                }
             </ul>
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
@@ -32,4 +49,12 @@ else
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: new { area = string.Empty }, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: new { area = string.Empty }, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
+}
+
+@section Scripts {
+    <script>
+        $.post("/GetFriendRequestsCount", function (data) {
+            $('#friendRequestsCount').val(data.friendRequestsCount);
+        })
+    </script>
 }

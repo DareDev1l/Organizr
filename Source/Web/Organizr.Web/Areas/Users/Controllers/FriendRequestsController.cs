@@ -87,5 +87,17 @@
 
             return this.Redirect("/");
         }
+
+        public ActionResult FriendRequestsCount()
+        {
+            var userId = this.User.Identity.GetUserId();
+
+            var friendRequestsCount = this.friendRequestServices
+                                        .GetAll()
+                                        .Where(x => x.ReceiverId == userId)
+                                        .Count();
+
+            return this.Json(new { friendRequestsCount = friendRequestsCount });
+        }
     }
 }

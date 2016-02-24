@@ -9,6 +9,7 @@
     using MvcTemplate.Services.Data;
     using ViewModels.Events;
 
+    [Authorize(Roles = "Administrator")]
     public class EventsController : Controller
     {
         private IEventsServices events;

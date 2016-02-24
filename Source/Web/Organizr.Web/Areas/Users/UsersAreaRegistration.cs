@@ -15,6 +15,12 @@ namespace Organizr.Web.Areas.Users
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
+                "FriendRequestsCount",
+                "GetFriendRequestsCount",
+                new { controller = "FriendRequests", action = "FriendRequestsCount" }
+            );
+
+            context.MapRoute(
                 "DeclineFriendRequest",
                 "Decline/{senderId}/{receiverId}",
                 new { controller = "FriendRequests", action = "Decline" }

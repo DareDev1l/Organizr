@@ -1,14 +1,15 @@
 ﻿namespace Organizr.Web.Areas.Administration.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
+    using Data.Models;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using MvcTemplate.Services.Data;
     using ViewModels.Events;
-    using System.Linq;
-    using Data.Models;
 
+    [Authorize(Roles = "Administrator")]
     public class CoordinatesController : Controller
     {
         private ICoordinatesServices coordinates;
