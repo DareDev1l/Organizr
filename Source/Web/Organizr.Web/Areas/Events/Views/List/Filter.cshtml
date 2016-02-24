@@ -11,7 +11,7 @@
 {
     <div class="col-md-4">
         <label for="contains">Contains</label>
-        <input type="text" class="form-control" name="contains" style="display: inline-block;" />
+        <input type="text" class="form-control" name="contains" />
     </div>
     <div class="col-md-3">
         @Html.Label("From")
@@ -31,12 +31,16 @@
               .HtmlAttributes(new { style = "width: 100%", @class="form-control" })
         )
     </div>
+    <div class="col-md-2"></div>
     <input type="hidden" name="page" id="hiddenPage" value="@Model.CurrentPage"/>
-    <input type="submit" value="Search" class="btn btn-primary" />
+    <input type="submit" value="Search" class="btn btn-primary" style="margin-top:23px;"/>
 }
 
 @foreach (var item in Model.Events)
 {
+    var base64 = Convert.ToBase64String(item.Organiser.Image.Content);
+    var imgSrc = string.Format("data:image/{0};base64,{1}", item.Organiser.Image.FileExtension, base64);
+
     //@Html.DisplayForModel(item)
     <div class="row custom-basic-info">
         <div class="row custom-heading">
@@ -56,7 +60,7 @@
                 </p>
                 <p style="font-size: 0.8em;text-align:right;">
                     <span class="glyphicon glyphicon-globe"></span>
-                    Organiser: @item.Organiser.Email
+                    Organiser: <img src="@imgSrc" width="25px" height="25px" /><a href="/User/@item.Organiser.Id">@item.Organiser.FirstName @item.Organiser.LastName</a>
                     <a href="@item.Url" class="btn btn-success">Details</a>
                 </p>
             </div>

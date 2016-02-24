@@ -224,6 +224,7 @@
     <Compile Include="Areas\Users\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Users\Controllers\ProfileImageController.cs" />
     <Compile Include="Areas\Users\UsersAreaRegistration.cs" />
+    <Compile Include="Areas\Users\ViewModels\EditProfileViewModel.cs" />
     <Compile Include="Areas\Users\ViewModels\FriendRequestViewModel.cs" />
     <Compile Include="Areas\Users\ViewModels\UserProfileViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -369,6 +370,7 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Events\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Coordinates\Index.cshtml" />
+    <Content Include="Areas\Users\Views\Profile\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

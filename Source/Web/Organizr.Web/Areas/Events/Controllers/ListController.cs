@@ -1,13 +1,12 @@
 ﻿namespace Organizr.Web.Areas.Events.Controllers
 {
+    using System;
     using System.Linq;
     using System.Web.Mvc;
-
     using Infrastructure.Mapping;
     using MvcTemplate.Services.Data;
     using ViewModels;
     using Web.Controllers;
-    using System;
 
     public class ListController : BaseController
     {
@@ -21,7 +20,11 @@
         // GET: Events/List
         public ActionResult All()
         {
-            var events = this.eventsServices.GetAll().To<ListEventsViewModel>().ToList();
+            var events = this.eventsServices
+                                .GetAll()
+                                .OrderByDescending(x => x.CreatedOn)
+                                .To<ListEventsViewModel>()
+                                .ToList();
 
             return this.View(events);
         }

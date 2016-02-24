@@ -33,6 +33,12 @@ namespace Organizr.Web.Areas.Users
             );
 
             context.MapRoute(
+                "Users_ProfileEdit",
+                "Me/Edit",
+                new { controller = "Profile", action = "Edit" }
+            );
+
+            context.MapRoute(
                 "Users_FriendRequests",
                 "Me/FriendRequests",
                 new { controller = "FriendRequests", action = "GetFriendRequests" }

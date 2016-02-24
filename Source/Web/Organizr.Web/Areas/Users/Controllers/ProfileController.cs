@@ -23,5 +23,29 @@
 
             return this.View(userToShow);
         }
+
+        [HttpGet]
+        public ActionResult Edit()
+        {
+            var userId = this.User.Identity.GetUserId();
+            var user = this.usersServices.GetUserById(userId);
+
+            var userModel = this.Mapper.Map<EditProfileViewModel>(user);
+
+            return this.View(userModel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EditProfileViewModel profile)
+        {
+            var userId = this.User.Identity.GetUserId();
+            var userToUpdate = this.usersServices.GetUserById(userId);
+            userToUpdate.FirstName = profile.FirstName;
+            userToUpdate.LastName = profile.LastName;
+
+            this.usersServices.Update(userToUpdate);
+
+            return this.Redirect("/Me");
+        }
     }
 }

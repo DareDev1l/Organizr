@@ -69,10 +69,14 @@
                 .WithMany(u => u.EventsParticipated)
                 .Map(mc =>
                 {
-                    mc.ToTable("PostJoinTag");
+                    mc.ToTable("EventsUsers");
                     mc.MapLeftKey("EventId");
                     mc.MapRightKey("UserId");
                 });
+
+            modelBuilder.Entity<Event>()
+                .HasRequired(ev => ev.Organiser)
+                .WithMany(user => user.EventsOrganised);
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();

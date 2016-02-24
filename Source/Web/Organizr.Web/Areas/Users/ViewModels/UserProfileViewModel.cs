@@ -24,5 +24,16 @@
         public ICollection<Location> LocationsOwned { get; set; }
 
         public ICollection<Event> EventsParticipated { get; set; }
+
+        public string ImageSrc
+        {
+            get
+            {
+                var base64 = Convert.ToBase64String(this.Image.Content);
+                var imgSrc = string.Format("data:image/{0};base64,{1}", this.Image.FileExtension, base64);
+
+                return imgSrc;
+            }
+        }
     }
 }

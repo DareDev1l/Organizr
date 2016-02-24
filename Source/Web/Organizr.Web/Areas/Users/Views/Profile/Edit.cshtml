@@ -1,0 +1,17 @@
+﻿@model Organizr.Web.Areas.Users.ViewModels.EditProfileViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Profile", FormMethod.Post))
+{
+    <label for="firstname">First name</label>
+    <input type="text" id="firstname" class="form-control" name="FirstName" value="@Model.FirstName">
+
+    <label for="firstname">First name</label>
+    <input type="text" id="firstname" class="form-control" name="LastName" value="@Model.LastName">
+
+    <input type="submit" class="btn btn-primary" value="Save" />
+}

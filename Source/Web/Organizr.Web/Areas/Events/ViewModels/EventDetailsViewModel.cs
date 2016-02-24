@@ -23,8 +23,6 @@
 
         public bool HasFinished { get; set; }
 
-        public ICollection<User> Candidates { get; set; }
-
         public ICollection<User> Participants { get; set; }
 
         public string EncodedId

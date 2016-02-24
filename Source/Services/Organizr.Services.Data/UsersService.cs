@@ -35,7 +35,14 @@
         {
             receiver.Friends.Add(sender);
             sender.Friends.Add(receiver);
-            this.Context.SaveChanges();
+
+            var store = new UserStore<User>(this.Context);
+            var userManager = new UserManager<User>(store);
+            var context = store.Context;
+
+            userManager.Update(receiver);
+            userManager.Update(sender);
+            context.SaveChanges();
         }
 
         public void Update(User user)
