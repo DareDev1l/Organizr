@@ -209,6 +209,9 @@
     <Compile Include="Areas\Administration\ViewModels\Events\EventInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Events\EventViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\Users\UserViewModel.cs" />
+    <Compile Include="Areas\Best\BestAreaRegistration.cs" />
+    <Compile Include="Areas\Best\Controllers\BestController.cs" />
+    <Compile Include="Areas\Best\ViewModels\BestEventsViewModel.cs" />
     <Compile Include="Areas\Events\Controllers\CreateController.cs" />
     <Compile Include="Areas\Events\Controllers\DetailsController.cs" />
     <Compile Include="Areas\Events\Controllers\EditController.cs" />
@@ -380,6 +383,9 @@
     <Content Include="Areas\Administration\Views\Users\Index.cshtml" />
     <Content Include="Areas\Users\Views\Profile\DetailsOf.cshtml" />
     <Content Include="Areas\Events\Views\Shared\_EventVotes.cshtml" />
+    <Content Include="Areas\Best\Views\web.config" />
+    <Content Include="Areas\Best\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Best\Views\Best\Best.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -437,6 +443,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\ViewModels\Coordinates\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Best\Views\Shared\" />
     <Folder Include="Areas\Events\Views\Rates\" />
     <Folder Include="Areas\Users\Views\ProfileImage\" />
     <Folder Include="ViewModels\Home\" />

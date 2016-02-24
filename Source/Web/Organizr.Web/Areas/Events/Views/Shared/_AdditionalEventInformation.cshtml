@@ -34,7 +34,10 @@
                         <h3>
                             <span class="glyphicon glyphicon-ok"></span>
                             Event is active 
-                            @Html.ActionLink("Join", "Join", "Details", new { area = "Events", id = Model.EncodedId }, new { @class = "btn btn-success" })
+                            @if (this.User.Identity.IsAuthenticated)
+                            {
+                                @Html.ActionLink("Join", "Join", "Details", new { area = "Events", id = Model.EncodedId }, new { @class = "btn btn-success" })
+                            }
                         </h3>
                     }
                 }

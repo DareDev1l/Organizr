@@ -6,6 +6,7 @@
     using ViewModels;
     using Web.Controllers;
 
+    [Authorize]
     public class ProfileController : BaseController
     {
         private IUsersServices usersServices;

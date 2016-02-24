@@ -4,8 +4,8 @@
     using System.Web.Mvc;
     using Microsoft.AspNet.Identity;
     using MvcTemplate.Services.Data;
-    using System;
 
+    [Authorize]
     public class RatesController : Controller
     {
         private IRatesServices rates;

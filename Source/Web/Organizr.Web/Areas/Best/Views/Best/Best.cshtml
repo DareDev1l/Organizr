@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Organizr.Web.Areas.Best.ViewModels.BestEventsViewModel>
+
+@{
+    ViewBag.Title = "Best";
+}
+
+<h2>Best events</h2>
+
+<ul style="list-style-type:none">
+   @foreach (var bestEvent in Model)
+   {
+       <li>
+            
+           <h2>
+                <a href="/Events/@bestEvent.EncodedId">@bestEvent.Name</a>
+           </h2>
+           <h3>
+               by <a href="/Users/@bestEvent.Organiser.Id"> @bestEvent.Organiser.FirstName @bestEvent.Organiser.LastName</a>
+           </h3>
+           <h3>Rating: @bestEvent.Rate / <span>5</span></h3>
+           <hr />
+       </li>
+   }
+</ul>

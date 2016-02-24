@@ -28,6 +28,7 @@
             return this.View(eventModel);
         }
 
+        [Authorize]
         public ActionResult Join(string id)
         {
             var userId = this.User.Identity.GetUserId();

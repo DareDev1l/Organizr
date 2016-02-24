@@ -23,8 +23,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        @if (this.User.Identity.IsAuthenticated)
-                        {
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                                 Events <span class="caret"></span>
@@ -33,21 +31,26 @@
                                 <li>
                                     <a href="/Events/Filter">Events</a>
                                 </li>
-                                <li>
-                                    @Html.ActionLink("Create Event", "Event", "Create", new { area = "Events" }, null)
-                                </li>
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        @Html.ActionLink("Create Event", "Event", "Create", new { area = "Events" }, null)
+                                    </li>
+                                }
                             </ul>
                         </li>
-                        }
-                        </li>
-                    </ul>
-                    <div>
-                    </div>
-                    @if (this.User.Identity.IsAuthenticated)
-                    {
-                        @Html.Partial("_SearchPartial", null, new ViewDataDictionary())
-                    }
-                    @Html.Partial("_LoginPartial")
+                    </li>
+                    <li>
+                        <a href="/Best" >Best</a>
+                    </li>
+                    <li>
+                        <a href="/Contacst">Contacts</a>
+                    </li>
+                </ul>
+                <div>
+                </div>
+                @Html.Partial("_SearchPartial", null, new ViewDataDictionary())
+                @Html.Partial("_LoginPartial")
                 </div>
             </div>
         </div>

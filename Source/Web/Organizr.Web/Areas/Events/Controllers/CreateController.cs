@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace Organizr.Web.Areas.Events.Controllers
 {
+    [Authorize]
     public class CreateController : Controller
     {
         private IEventsServices eventsServices;

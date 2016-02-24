@@ -1,10 +1,14 @@
 ﻿@model Organizr.Web.Areas.Events.ViewModels.EventDetailsViewModel
 
-<div class="rate-holder" style="margin-top:15px">
-    <input type="hidden" value="@Model.Id" id="event-id" />
-    <input type="number" min="1" max="5" value="1" id="rate-num" />
-    <input type="button" class="btn btn-primary" value="Rate" id="rate-btn" />
-</div>
-<div style="margin-top:15px;">
-    <p id="rate-message"></p>
-</div>
+@if (this.User.Identity.IsAuthenticated)
+{
+    <div class="rate-holder" style="margin-top:15px">
+        <input type="hidden" value="@Model.Id" id="event-id" />
+        <input type="number" min="1" max="5" value="1" id="rate-num" />
+        <input type="button" class="btn btn-primary" value="Rate" id="rate-btn" />
+    </div>
+    <div style="margin-top:15px;">
+        <p id="rate-message"></p>
+    </div>
+
+}
