@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using MvcTemplate.Services.Data;
 using Organizr.Data.Models;
+using Organizr.Services.Web;
 using Organizr.Web.Areas.Events.ViewModels;
 using Organizr.Web.Infrastructure.Mapping;
 using System;
@@ -50,9 +51,11 @@ namespace Organizr.Web.Areas.Events.Controllers
                 LocationId = 1
             };
 
-            this.eventsServices.CreateEvent(eventToCreate);
+            var createdEvent = this.eventsServices.CreateEvent(eventToCreate);
+            IIdentifierProvider provider = new IdentifierProvider();
+            string encodedId = provider.EncodeId(createdEvent.Id);
 
-            return this.Redirect("~/Events/Filter");
+            return this.Redirect("~/Events/" + encodedId);
         }
     }
 }

@@ -9,9 +9,11 @@
     {
         public int Id { get; set; }
 
-        [MinLength(5)]
+        [Required]
+        [MinLength(1)]
         public string Name { get; set; }
 
+        [Required]
         [MinLength(10)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
