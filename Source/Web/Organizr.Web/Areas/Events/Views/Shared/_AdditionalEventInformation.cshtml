@@ -16,6 +16,10 @@
                     <span class="glyphicon glyphicon-time"></span>
                     Start: @Model.StartDate
                 </h3>
+                <h3>
+                    <span class="glyphicon glyphicon-star"></span>
+                    Rating: <span id="avgRating">@Model.Rate</span>
+                </h3>
                 @{
                     if (Model.HasFinished)
                     {
@@ -61,7 +65,7 @@
 
                         <li>
                             <img src="@imgSrc" width="42px" height="42px" />
-                            <a href="/User/@participant.Id">@participant.FirstName @participant.LastName</a>
+                            <a href="/Users/@participant.Id">@participant.FirstName @participant.LastName</a>
                         </li>
                     }
                 </ul>

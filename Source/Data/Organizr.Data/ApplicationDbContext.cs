@@ -26,6 +26,8 @@
 
         public IDbSet<Coordinates> Coordinates { get; set; }
 
+        public IDbSet<EventRate> EventRates { get; set; }
+
         public IDbSet<FriendRequest> FriendRequests { get; set; }
 
         public IDbSet<Image> Images { get; set; }

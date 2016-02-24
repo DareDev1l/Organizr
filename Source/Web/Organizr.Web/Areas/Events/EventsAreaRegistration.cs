@@ -15,6 +15,12 @@ namespace Organizr.Web.Areas.Events
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
+                "Rates_Rate",
+                "Rates/Rate",
+                new { controller = "Rates", action = "Rate" }
+            );
+
+            context.MapRoute(
                 "Events_filter",
                 "Events/Filter",
                 new { controller = "List", action = "Filter" }

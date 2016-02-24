@@ -7,4 +7,24 @@
 
 @Html.Partial("_BasicEventInformation", Model)
 @Html.Partial("_AdditionalEventInformation", Model)
+@Html.Partial("_EventVotes", Model)
 
+@section Scripts {
+    <script>
+        $('#rate-btn').click(function () {
+            var rate = $('#rate-num').val();
+            var eventId = $('#event-id').val();
+
+            var postUrl = "/Rates/Rate";
+            console.log(postUrl);
+
+            $.post(postUrl, { eventId: eventId, value: rate }, function (data) {
+                $('.rate-holder').hide();
+                $('#rate-message').val("You rated this " + data.RateValue + "/5");
+
+                // $('.successful-rate').show();
+                // $('.successful-rate').val("You rated this " + data.RateValue + "/5");
+            });
+        });
+    </script>
+}

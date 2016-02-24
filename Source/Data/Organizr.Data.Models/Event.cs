@@ -8,10 +8,12 @@
     public class Event : BaseModel<int>
     {
         private ICollection<User> participants;
+        private ICollection<EventRate> eventRates;
 
         public Event()
         {
             this.participants = new HashSet<User>();
+            this.eventRates = new HashSet<EventRate>();
         }
 
         [Required]
@@ -37,6 +39,19 @@
         public virtual Coordinates Coordinates { get; set; }
 
         public bool HasFinished { get; set; }
+
+        public virtual ICollection<EventRate> EventRates
+        {
+            get
+            {
+                return this.eventRates;
+            }
+
+            set
+            {
+                this.eventRates = value;
+            }
+        }
 
         public virtual ICollection<User> Participants
         {

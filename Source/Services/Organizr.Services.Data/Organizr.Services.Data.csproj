@@ -68,8 +68,10 @@
     <Compile Include="IFriendRequestServices.cs" />
     <Compile Include="IImagesServices.cs" />
     <Compile Include="ImagesServices.cs" />
+    <Compile Include="IRatesServices.cs" />
     <Compile Include="IUsersServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RatesServices.cs" />
     <Compile Include="UsersService.cs" />
   </ItemGroup>
   <ItemGroup>

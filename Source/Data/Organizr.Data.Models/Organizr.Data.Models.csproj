@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coordinates.cs" />
+    <Compile Include="EventRate.cs" />
     <Compile Include="FriendRequest.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="LocationOnMap.cs" />
