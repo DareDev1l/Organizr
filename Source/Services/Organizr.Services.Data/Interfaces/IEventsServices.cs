@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using Organizr.Data.Models;
+    using System.Threading.Tasks;
 
     public interface IEventsServices
     {
@@ -15,7 +16,7 @@
 
         void Delete(Event eventToDelete);
 
-        Event AddUserToEvent(string eventId, User user);
+        Task<Event> AddUserToEvent(string eventId, User user);
 
         void Update(Event eventToUpdate);
     }

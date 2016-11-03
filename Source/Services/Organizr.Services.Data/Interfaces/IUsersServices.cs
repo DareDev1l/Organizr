@@ -2,14 +2,15 @@
 {
     using System.Linq;
     using Organizr.Data.Models;
+    using System.Threading.Tasks;
 
     public interface IUsersServices
     {
         IQueryable<User> GetAll();
 
-        void AddUserToFriends(User sender, User receiver);
+        Task AddUserToFriends(User sender, User receiver);
 
-        void Update(User user);
+        Task Update(User user);
 
         User GetUserById(string id);
     }

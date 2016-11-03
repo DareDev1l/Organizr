@@ -63,13 +63,13 @@
     <Compile Include="CoordinatesServices.cs" />
     <Compile Include="EventsServices.cs" />
     <Compile Include="FriendRequestServices.cs" />
-    <Compile Include="ICoordinatesServices.cs" />
-    <Compile Include="IEventsServices.cs" />
-    <Compile Include="IFriendRequestServices.cs" />
-    <Compile Include="IImagesServices.cs" />
+    <Compile Include="Interfaces\ICoordinatesServices.cs" />
+    <Compile Include="Interfaces\IEventsServices.cs" />
+    <Compile Include="Interfaces\IFriendRequestServices.cs" />
+    <Compile Include="Interfaces\IImagesServices.cs" />
     <Compile Include="ImagesServices.cs" />
-    <Compile Include="IRatesServices.cs" />
-    <Compile Include="IUsersServices.cs" />
+    <Compile Include="Interfaces\IRatesServices.cs" />
+    <Compile Include="Interfaces\IUsersServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatesServices.cs" />
     <Compile Include="UsersService.cs" />
@@ -89,7 +89,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Organizr.Services.Web\Organizr.Services.Web.csproj">
       <Project>{deab17a2-58c1-448c-8a66-d49c3af7fc6c}</Project>
-      <Name>MvcTemplate.Services.Web</Name>
+      <Name>Organizr.Services.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

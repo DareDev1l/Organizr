@@ -49,7 +49,7 @@
 
         public virtual Image Image { get; set; }
 
-        public ICollection<User> Friends
+        public virtual ICollection<User> Friends
         {
             get
             {
@@ -62,7 +62,7 @@
             }
         }
 
-        public ICollection<FriendRequest> FriendRequests
+        public virtual ICollection<FriendRequest> FriendRequests
         {
             get
             {
@@ -75,7 +75,7 @@
             }
         }
 
-        public ICollection<Event> EventsOrganised
+        public virtual ICollection<Event> EventsOrganised
         {
             get
             {
@@ -88,7 +88,7 @@
             }
         }
 
-        public ICollection<Event> EventsParticipated
+        public virtual ICollection<Event> EventsParticipated
         {
             get
             {
@@ -101,7 +101,7 @@
             }
         }
 
-        public ICollection<Location> LocationsOwned
+        public virtual ICollection<Location> LocationsOwned
         {
             get
             {

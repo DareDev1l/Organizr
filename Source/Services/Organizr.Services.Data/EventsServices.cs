@@ -1,10 +1,10 @@
 ﻿namespace MvcTemplate.Services.Data
 {
-    using System;
     using System.Linq;
     using Organizr.Data.Common;
     using Organizr.Data.Models;
     using Organizr.Services.Web;
+    using System.Threading.Tasks;
 
     public class EventsServices : IEventsServices
     {
@@ -53,7 +53,7 @@
             this.events.Save();
         }
 
-        public Event AddUserToEvent(string eventId, User user)
+        public async Task<Event> AddUserToEvent(string eventId, User user)
         {
             var eventToFind = this.GetById(eventId);
             eventToFind.Participants.Add(user);
@@ -62,7 +62,7 @@
             var eventToAdd = this.GetById(eventId);
 
             user.EventsParticipated.Add(eventToAdd);
-            this.users.Update(user);
+            await this.users.Update(user);
 
             return eventToFind;
         }

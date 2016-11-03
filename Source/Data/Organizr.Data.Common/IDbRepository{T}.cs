@@ -10,13 +10,15 @@
     }
 
     public interface IDbRepository<T, in TKey>
-        where T : class
+       // where T : class
     {
         IQueryable<T> All();
 
         IQueryable<T> AllWithDeleted();
 
         void Add(T entity);
+
+        T GetById(int id);
 
         void Delete(T entity);
 

@@ -6,6 +6,7 @@
     using MvcTemplate.Services.Data;
     using ViewModels;
     using Web.Controllers;
+    using System.Threading.Tasks;
 
     public class DetailsController : BaseController
     {
@@ -29,13 +30,14 @@
         }
 
         [Authorize]
-        public ActionResult Join(string id)
+        public async Task<ActionResult> Join(string id)
         {
             var userId = this.User.Identity.GetUserId();
-            var user = this.usersServices.GetAll().Where(x => x.Id == id).FirstOrDefault();
+            var user = this.usersServices.GetAll().Where(x => x.Id == userId).FirstOrDefault();
 
-            var eventData = this.eventsServices.AddUserToEvent(id, user);
-            var eventForView = this.Mapper.Map<EventDetailsViewModel>(eventData);
+            await this.eventsServices.AddUserToEvent(id, user);
+            var curEvent = this.eventsServices.GetById(id);
+            var eventForView = this.Mapper.Map<EventDetailsViewModel>(curEvent);
 
             return this.View("ById", eventForView);
         }

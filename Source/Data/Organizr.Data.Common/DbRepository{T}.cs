@@ -5,10 +5,11 @@
     using System.Linq;
 
     using Organizr.Data.Common.Models;
+    using System.Threading.Tasks;
 
     // TODO: Why BaseModel<int> instead BaseModel<TKey>?
     public class DbRepository<T> : IDbRepository<T>
-        where T : BaseModel<T>
+        where T : BaseModel<int>
     {
         public DbRepository(DbContext context)
         {
