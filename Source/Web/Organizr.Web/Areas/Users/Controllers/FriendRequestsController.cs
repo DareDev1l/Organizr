@@ -8,6 +8,7 @@
     using Microsoft.AspNet.Identity;
     using MvcTemplate.Services.Data;
     using ViewModels;
+    using System.Threading.Tasks;
 
     [Authorize]
     public class FriendRequestsController : Controller
@@ -52,7 +53,7 @@
             return this.Redirect("/Me");
         }
 
-        public ActionResult Accept(string senderId, string receiverId)
+        public async Task<ActionResult> Accept(string senderId, string receiverId)
         {
             var friendRequest = this.friendRequestServices
                                 .GetAll()
@@ -62,7 +63,7 @@
             var sender = this.usersServices.GetUserById(friendRequest.SenderId);
             var receiver = this.usersServices.GetUserById(friendRequest.ReceiverId);
 
-            this.usersServices.AddUserToFriends(sender, receiver);
+            await this.usersServices.AddUserToFriends(sender, receiver);
             /*
             sender.Friends.Add(receiver);
             receiver.Friends.Add(sender);
